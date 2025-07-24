@@ -1,0 +1,13 @@
+{
+    "name": "root",
+    "private": true,
+    "workspaces": [
+        "landing",
+        "posts"
+    ],
+    "scripts": {
+        "build": "rm -rf public/ && npm run build -w landing && npm run build -w posts && mv -i landing/public/ ./ && mkdir public/posts && mv -i posts/public/* public/posts/",
+        "posts": "npm run dev -w posts",
+        "landing": "npm run develop -w landing"
+    }
+}
