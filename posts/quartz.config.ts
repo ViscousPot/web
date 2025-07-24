@@ -81,6 +81,22 @@ const config: QuartzConfig = {
       Plugin.ContentPage({
         afterBody: [
           Component.MobileOnly(
+            Component.Comments({
+              provider: 'giscus',
+              options: {
+                repo: 'ViscousPot/web',
+                repoId: 'R_kgDOPK35bQ',
+                category: 'Announcements',
+                categoryId: 'DIC_kwDOPK35bc4CtWPx',
+                lang: 'en',
+                mapping: "pathname",
+                strict: false,
+                reactionsEnabled: true,
+                inputPosition:"top",
+              }
+            }),
+          ),
+          Component.MobileOnly(
             Component.RecentNotes({ 
               title: "Recent Posts",
               filter: (node) => !node.filePath?.includes("index.md"),

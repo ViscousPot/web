@@ -52,6 +52,22 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
+    Component.DesktopOnly(
+      Component.Comments({
+        provider: 'giscus',
+        options: {
+          repo: 'ViscousPot/web',
+          repoId: 'R_kgDOPK35bQ',
+          category: 'Announcements',
+          categoryId: 'DIC_kwDOPK35bc4CtWPx',
+          lang: 'en',
+          mapping: "pathname",
+          strict: false,
+          reactionsEnabled: true,
+          inputPosition:"top",
+        }
+      }),
+    ),
   ],
 }
 
