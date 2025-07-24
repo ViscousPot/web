@@ -41,7 +41,6 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.DesktopOnly(
-      //  && node.dates?.created!! > new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
       Component.RecentNotes({ 
         title: "Recent Posts",
         filter: (node) => !node.filePath?.includes("index.md"),
@@ -52,9 +51,7 @@ export const defaultContentPageLayout: PageLayout = {
     )
   ],
   right: [
-    Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
   ],
 }
 
