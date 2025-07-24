@@ -26,8 +26,7 @@ export function pageResources(
   initBaseDir: FullSlug | RelativeURL,
   staticResources: StaticResources,
 ): StaticResources {
-  const baseDir = initBaseDir
-  // initBaseDir == "." || initBaseDir == ".." ? "/posts" : initBaseDir
+  const baseDir = initBaseDir == "." || initBaseDir == ".." ? "/posts" : initBaseDir
   const contentIndexPath = joinSegments(baseDir, "static/contentIndex.json")
   const contentIndexScript = `const fetchData = fetch("${contentIndexPath}").then(data => data.json())`
 
