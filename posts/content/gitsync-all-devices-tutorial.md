@@ -80,7 +80,7 @@ We will be creating a new private repository to hold the files you want to sync.
 
 In the next few steps you'll need a terminal to run a few commands. It's just for some one-time setup and should just be some copy-pasting.
 
-* **Windows**: Install [Git for Windows](https://git-scm.com/download/win), which provides **Git Bash**. Open it from the Start menu. You can also use PowerShell if Git is in your PATH.
+* **Windows**: Install [Git for Windows](https://git-scm.com/download/win), which provides **Git Bash**. Open it from the Start menu.
 * **macOS**: Open **Terminal.app** (Applications > Utilities > Terminal) or use Spotlight (`Cmd + Space`, then type "Terminal").
 * **Linux**: Most distros ship with a terminal emulator preinstalled (e.g. GNOME Terminal, Konsole). Launch it from your app launcher or with `Ctrl+Alt+T`.
 
