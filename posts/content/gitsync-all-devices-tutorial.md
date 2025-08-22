@@ -76,6 +76,16 @@ We will be creating a new private repository to hold the files you want to sync.
 > - **Obsidian** installed on your desktop ([Download Obsidian](https://obsidian.md/download)).
 > - Completed the [[#Prerequisites]] section
 
+### Opening a Terminal
+
+In the next few steps you'll need a terminal to run a few commands. It's just for some one-time setup and should just be some copy-pasting.
+
+* **Windows**: Install [Git for Windows](https://git-scm.com/download/win), which provides **Git Bash**. Open it from the Start menu. You can also use PowerShell if Git is in your PATH.
+* **macOS**: Open **Terminal.app** (Applications > Utilities > Terminal) or use Spotlight (`Cmd + Space`, then type "Terminal").
+* **Linux**: Most distros ship with a terminal emulator preinstalled (e.g. GNOME Terminal, Konsole). Launch it from your app launcher or with `Ctrl+Alt+T`.
+
+---
+
 ### Installing Git
 
 "Git" is the name of the program that will be doing most of the heavy lifting in tracking the change history of your vault. Before we can do anything, we first need to make sure Git is installed on our device.
