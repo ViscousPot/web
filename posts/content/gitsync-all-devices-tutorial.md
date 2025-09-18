@@ -1,49 +1,48 @@
 ---
 title: How to Sync Obsidian Across All Devices Using Git, Automatically and for Free
 date: 2025-07-25
---- 
+---
 
 ![Now also in video format!](https://youtu.be/Cu4-BPcveBI)
 
-If you're looking for a seamless, automatic and totally free way to sync your Obsidian vaults across all your devices, using Git, you're in the right place! The main benefits of this as your sync setup are the change history, freedom of choice and the fact that it remains completely free. I am currently using this exact solution across all of my devices to passively keep my notes in sync. 
+If you're looking for a seamless, automatic and totally free way to sync your Obsidian vaults across all your devices, using Git, you're in the right place! The main benefits of this as your sync setup are the change history, freedom of choice and the fact that it remains completely free. I am currently using this exact solution across all of my devices to passively keep my notes in sync.
 
 Here, I will be taking you through: choosing a Git provider, creating a repository, setting up sync on the devices you use and inserting some initial vault contents if you already have a vault.
 
 ---
+
 ## Prerequisites
 
 ### Understanding Git Providers and Repositories
 
 We will need a few things before getting started:
+
 - A Git provider selected
 - A repository on this provider
 
 For those that are unfamiliar, here is a quick rundown on these concepts.<br>
 **A Git provider is sort of the equivalent to your cloud storage provider**, in this case, in that they store all your files. We will be using GitHub going forward, but you can also go with Gitlab or any other Git server provider, or even self-host your own server and keep everything completely local.
 
-Following on from that, **the repository is sort of the equivalent to a folder *inside* your cloud storage**. Each provider has different limits for their repository sizes, but most allow a very substantial number of individual repositories. 
+Following on from that, **the repository is sort of the equivalent to a folder _inside_ your cloud storage**. Each provider has different limits for their repository sizes, but most allow a very substantial number of individual repositories.
 
 To give you a better idea:
-  GitHub allows
-    - 1GB for private repositories
-    - Unlimited public repository size (subject to fair use and bandwidth limits)
+GitHub allows - 1GB for private repositories - Unlimited public repository size (subject to fair use and bandwidth limits)
 
-  Gitlab allows
-    - 5GB for public & private repositories
+Gitlab allows - 5GB for public & private repositories
 
 **Going forward we will be using GitHub for everything, but most instructions are relatively similar across providers, so feel free to swap things out for your ideal setup!**
 
 ### Creating a repository
 
 > [!important] Prerequisites
+>
 > - Visit the [GitHub signup page](https://github.com/signup) and create an account!
-> - If you already have an existing repository to sync from another location, you can skip this step. 
-> 	- [What is a repository?](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories)
+> - If you already have an existing repository to sync from another location, you can skip this step.
+>   - [What is a repository?](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories)
 
-We will be creating a new private repository to hold the files you want to sync. While this offers a relatively secure solution, keep in mind that no system is completely immune to determined attackers. 
+We will be creating a new private repository to hold the files you want to sync. While this offers a relatively secure solution, keep in mind that no system is completely immune to determined attackers.
 
-> **Log into your GitHub account**<br>
-> **Click your profile icon in the top right**
+> **Log into your GitHub account**<br> > **Click your profile icon in the top right**
 
 ![Profile icon on github.com](../images/gitsync-all-devices-tutorial/404990457-5b394787-4773-4aa3-8068-41a514dfe826.png)
 
@@ -56,10 +55,11 @@ We will be creating a new private repository to hold the files you want to sync.
 ![New repository button on github.com](../images/gitsync-all-devices-tutorial/404989960-0eb2b93a-a4d7-4b5a-b37f-cb97ca38ede0.png)
 
 > **Enter the repository details:**
+>
 > - Name (required)
 > - Description (optional)
 > - Select "Private" or "Public" based on whether you want others to have anonymous access to the contents
-> - **Enable "Initialize with  README" so that your repository has some initial contents**
+> - **Enable "Initialize with README" so that your repository has some initial contents**
 
 ![[../images/gitsync-all-devices-tutorial/Timeline 1_01_02_44_09.jpg]]
 
@@ -67,12 +67,14 @@ We will be creating a new private repository to hold the files you want to sync.
 
 ![Screen Shot 2025-01-20 at 19 45 14](../images/gitsync-all-devices-tutorial/404990826-8bbb363a-3908-4682-b676-4c480557cacb.png)
 
-***Good to go!***
+**_Good to go!_**
 
 ---
+
 ## Windows + Linux + MacOS (Obsidian-Git)
 
 > [!important] Prerequisites
+>
 > - **Obsidian** installed on your desktop ([Download Obsidian](https://obsidian.md/download)).
 > - Completed the [[#Prerequisites]] section
 
@@ -80,9 +82,9 @@ We will be creating a new private repository to hold the files you want to sync.
 
 In the next few steps you'll need a terminal to run a few commands. It's just for some one-time setup and should just be some copy-pasting.
 
-* **Windows**: Install [Git for Windows](https://git-scm.com/download/win), which provides **Git Bash**. Open it from the Start menu.
-* **macOS**: Open **Terminal.app** (Applications > Utilities > Terminal) or use Spotlight (`Cmd + Space`, then type "Terminal").
-* **Linux**: Most distros ship with a terminal emulator preinstalled (e.g. GNOME Terminal, Konsole). Launch it from your app launcher or with `Ctrl+Alt+T`.
+- **Windows**: Install [Git for Windows](https://git-scm.com/download/win), which provides **Git Bash**. Open it from the Start menu.
+- **macOS**: Open **Terminal.app** (Applications > Utilities > Terminal) or use Spotlight (`Cmd + Space`, then type "Terminal").
+- **Linux**: Most distros ship with a terminal emulator preinstalled (e.g. GNOME Terminal, Konsole). Launch it from your app launcher or with `Ctrl+Alt+T`.
 
 ---
 
@@ -94,17 +96,20 @@ Here are the commands/steps to install Git on **Linux**, **macOS**, or **Windows
 
 **Linux**<br>
 Debian/Ubuntu:
+
 ```bash
 sudo apt update
 sudo apt install git
 ```
 
 RHEL/CentOS/Fedora:
+
 ```bash
 sudo dnf install git
 ```
 
 Arch/Manjaro:
+
 ```bash
 sudo pacman -S git
 ```
@@ -112,6 +117,7 @@ sudo pacman -S git
 ---
 
 **macOS**
+
 ```bash
 xcode-select --install
 ```
@@ -127,13 +133,14 @@ With that done, at this stage, you might want to install GitHub Desktop. This is
 
 You can grab it for Windows and MacOS [here](https://github.com/desktop/desktop/releases) and the Linux fork from [here](https://github.com/shiftkey/desktop)
 
-There will be a tiny bit of setup after the install, so just follow the instructions and 
+There will be a tiny bit of setup after the install, so just follow the instructions and
+
 - Log in to your GitHub account through the browser
 - Leave the author details as default or fill them out with your username and email if it's empty
- 
+
 ### Generate and add SSH Key for GitHub
 
-This step is all about setting up authentication so you can interact with your GitHub account using Git, without having to enter an email or password each time. 
+This step is all about setting up authentication so you can interact with your GitHub account using Git, without having to enter an email or password each time.
 
 We will need only 5 commands!
 
@@ -142,6 +149,7 @@ We will need only 5 commands!
 This command will generate a pair of keys that will be used for secure authentication. You should take every precaution to make sure the keys produced are kept private.
 
 **Windows (Git Bash)** / **Linux / macOS**:
+
 ```bash
 ssh-keygen -t ed25519 -C "your-email@example.com"
 ```
@@ -153,6 +161,7 @@ Press **Enter** to accept the default location (`~/.ssh/id_ed25519`). Set a pass
 This command launches the background process (`ssh-agent`) that handles your private keys securely. It must be running to use SSH keys for authentication.
 
 **Windows (Git Bash)** / **Linux / macOS**:
+
 ```bash
 eval "$(ssh-agent -s)"
 ```
@@ -162,30 +171,35 @@ eval "$(ssh-agent -s)"
 Once the agent is running, this command loads your private key into it so it can be used for authentication without re-entering the passphrase each time.
 
 **Windows (Git Bash)** / **Linux / macOS**:
+
 ```bash
 ssh-add ~/.ssh/id_ed25519
 ```
 
 **Windows (Git Bash)** / **Linux**:
 Make sure to change out the path if you changed it from the default
+
 ```bash
 echo -e "Host github.com\n HostName github.com\n User git\n IdentityFile ~/.ssh/id_ed25519\n AddKeysToAgent yes" >> ~/.ssh/config
 ```
 
 **macOS**:
 Make sure to change out the path if you changed it from the default
+
 ```bash
 echo -e "Host github.com\n HostName github.com\n User git\n IdentityFile ~/.ssh/id_ed25519\n AddKeysToAgent yes\n UseKeyChain yes" >> ~/.ssh/config
 ```
 
 **Windows (Git Bash)** / **Linux / macOS**:
-``` bash
+
+```bash
 chmod 600 ~/.ssh/config
 ```
 
 > [!warning] If you see an error on macOS
 > `Could not open a connection to your authentication agent`
 > Run:
+>
 > ```bash
 > eval "$(ssh-agent -s)"
 > ```
@@ -200,16 +214,19 @@ Test your setup using `ssh -T git@github.com`
 Use the appropriate command to copy the public key you generated previously into your clipboard. The public key is the one, out of the pair, that you share with your Git provider.
 
 **Windows (Git Bash)**:
+
 ```bash
 clip < ~/.ssh/id_ed25519.pub
 ```
 
 **macOS**:
+
 ```bash
 pbcopy < ~/.ssh/id_ed25519.pub
 ```
 
 **Linux**:
+
 ```bash
 xclip -sel clip < ~/.ssh/id_ed25519.pub
 ```
@@ -229,7 +246,7 @@ That's authentication officially setup for your GitHub account, so we can now mo
 1. Open **GitHub Desktop**.
 2. Go to **File** > **Clone Repository**.
 3. ​Select the **URL** tab and enter your newly created repository url, making sure it looks like: `git@github.com:username/repo.git` (not `https://`)
-   *This ensures GitHub Desktop can authenticate using your SSH key.*
+   _This ensures GitHub Desktop can authenticate using your SSH key._
 4. Choose a local directory for the repository (e.g., `~/Documents/my-obsidian-vault`).
 5. Click **Clone**.
 
@@ -239,7 +256,7 @@ That's authentication officially setup for your GitHub account, so we can now mo
 
 > [!tip] Hidden Folders  
 > If you don’t see `.git` or `.obsidian`, enable hidden files/folders in your file explorer:
-> 
+>
 > - **Windows**: View > Hidden Items
 > - **macOS**: `Cmd + Shift + .` in Finder
 > - **Linux**: `Ctrl + H` in most file managers
@@ -266,17 +283,17 @@ The last thing to do for our desktop setup is to make sure we have auto sync. Fo
    - **Pull on commit-and-sync**: Enabled.
 3. Save changes.
 
-
 **You’re now set up to have auto sync for your Obsidian vault on desktop!**
 
 Feel free to open the Git - Source Control View and sync manually using the `Commit and Sync` button
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-up-icon lucide-circle-arrow-up"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4"/><path d="M12 16V8"/></svg> 
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-up-icon lucide-circle-arrow-up"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4"/><path d="M12 16V8"/></svg>
 
 ---
 
 ## Android + iOS (GitSync)
 
 > [!important] Prerequisites
+>
 > - **Obsidian** installed on your mobile device ([Download Obsidian](https://obsidian.md/download)).
 > - Completed the [[#Prerequisites]] section
 
@@ -287,14 +304,14 @@ For transparency: GitSync is developed by me. It was a project built out of my o
 ### Installing GitSync
 
 You can find official releases of GitSync at the respective app stores:<br>
-> **App Store**: https://apps.apple.com/ca/app/gitsync/id6744980427<br>
-> **Play Store**: https://play.google.com/store/apps/details?id=com.viscouspot.gitsync
+
+> **App Store**: https://apps.apple.com/ca/app/gitsync/id6744980427<br> > **Play Store**: https://play.google.com/store/apps/details?id=com.viscouspot.gitsync
 
 ### Setting up GitSync
 
 > [!warning] iOS-only Required Setup
 > Before setting up GitSync on iOS, we will need to do some quick setup in Obsidian
-> 
+>
 > 1. Open Obsidian
 > 2. Click "Create a vault" (this will need to be new and separate from any vault's contents you want to sync in the end)
 > 3. (Skip setting up sync if prompted)
@@ -303,32 +320,34 @@ You can find official releases of GitSync at the respective app stores:<br>
 
 The initial GitSync onboarding aims to be a beginner-friendly setup walkthrough, so it should be very quick to get setup!
 
- 1. **Open GitSync**
- 2. Select "Let's Go" on the welcome dialog
- 3. Accept notifications permissions
-	 - The app uses these permissions to notify you when sync operations are occurring in the background. There is also an in-app setting to toggle these off.
- 4. (*Android-Only*) Accept "all files access" permission
-	 - The app requires this permission to read/write your vault contents to keep it in sync
-	 - Android has the ability for scoped storage access, but the API for this is incomplete and slow, to the point that it cannot be used in this case.
-5. On the "almost there" dialog, you can optionally check out the wiki, or skip on ahead
+1.  **Open GitSync**
+2.  Select "Let's Go" on the welcome dialog
+3.  Accept notifications permissions
+    - The app uses these permissions to notify you when sync operations are occurring in the background. There is also an in-app setting to toggle these off.
+4.  (_Android-Only_) Accept "all files access" permission
+    - The app requires this permission to read/write your vault contents to keep it in sync
+    - Android has the ability for scoped storage access, but the API for this is incomplete and slow, to the point that it cannot be used in this case.
+5.  On the "almost there" dialog, you can optionally check out the wiki, or skip on ahead
 
-**Now we will authenticate with our previously created GitHub account.** At this point, you could reuse the private key from the desktop setup with GitSync too, by utilising the SSH authentication option and importing the key. 
+**Now we will authenticate with our previously created GitHub account.** At this point, you could reuse the private key from the desktop setup with GitSync too, by utilising the SSH authentication option and importing the key.
 
 However, for simplicity and speed, I will be running through the GitHub OAuth option included in the app.
 
 6. Make sure you have the GitHub authentication option selected and click the OAuth button
 7. **Authenticate in the browser with your GitHub credentials**
 8. As a final step, the app will request that you fill out the author details (username & email)
-	- **Please fill this out with your GitHub username and/or email address**
+   - **Please fill this out with your GitHub username and/or email address**
 
-The next step is to clone your existing repository from GitHub. If you have used OAuth, you can simply select the repository name from the list. If you opted for SSH authentication, then just use a valid URL, as described for the desktop setup. 
+The next step is to clone your existing repository from GitHub. If you have used OAuth, you can simply select the repository name from the list. If you opted for SSH authentication, then just use a valid URL, as described for the desktop setup.
 
 When prompted to select a directory to clone into:
-*on Android*
+_on Android_
+
 1. **Create a new and empty folder** (this will need to be new and separate from any vault's contents you want to sync in the end)
 2. Select the newly created folder to clone into (any contents may be overwritten)
 
-*on iOS*
+_on iOS_
+
 1. **Select the folder of the previously created Obsidian vault** (check for the file you created to verify)
 2. Select overwrite when prompted to **replace the existing contents**
 
@@ -340,22 +359,24 @@ As a bonus step, of course, **you can now copy in some initial contents to your 
 
 > [!warning] The plugin `obsidian-git` will interfere with GitSync, so you will need to disable it on your mobile devices!
 > This can easily be done by opening your Obsidian vault on your mobile device, scrolling to the bottom of the `Git` settings and enabling `Disable on this device`
-> 
+>
 > ![[../images/gitsync-all-devices-tutorial/New Project(57).png]]
 
 ### Configure Background Sync
 
-*on Android*
+_on Android_
+
 - **You can setup auto sync, which is ideal for Obsidian**
-	- With it setup, the app will sync your vault everytime you open or close (background/foreground)  a selected app; in this case Obsidian.
-	- Simply:
-		1. Enable the accessibility service
-			- The app uses this permission to detect when a selected app has been opened or closed
-		2. Add Obsidian to the application list
-		3. Enable "sync on app(s) opened" and/or "sync on app(s) closed"
+  - With it setup, the app will sync your vault everytime you open or close (background/foreground) a selected app; in this case Obsidian.
+  - Simply:
+    1. Enable the accessibility service
+       - The app uses this permission to detect when a selected app has been opened or closed
+    2. Add Obsidian to the application list
+    3. Enable "sync on app(s) opened" and/or "sync on app(s) closed"
 - From here, you could also optionally enable scheduled sync so periodic sync up to as often as every 15 minutes
 
-*on iOS*
+_on iOS_
+
 - **You can setup scheduled sync, which will sync as often as iOS allows** (can be as often as 15 minutes after some time)
 
 **You should now be setup for Obsidian vault auto sync on your mobile devices!**
@@ -364,13 +385,13 @@ As a bonus step, of course, **you can now copy in some initial contents to your 
 
 ## Final Words
 
-Hopefully this has been helpful in getting Obsidian set up for auto sync using Git\! If you find anything wrong with this guide or have any issues, please do leave a comment so that it can be kept up to date. 
+Hopefully this has been helpful in getting Obsidian set up for auto sync using Git\! If you find anything wrong with this guide or have any issues, please do leave a comment so that it can be kept up to date.
 
 Before you go on your way, here are a few handy links to bookmark:
 
 - **Checkout your change history**
-	- https://github.com/{username}/{repository-name}
+  - https://github.com/{username}/{repository-name}
 - **Setup collaborative access to your repository**
-	- https://github.com/{username}/{repository-name}/settings/access
+  - https://github.com/{username}/{repository-name}/settings/access
 - **See your contribution graph**
-	- https://github.com/{username}
+  - https://github.com/{username}
