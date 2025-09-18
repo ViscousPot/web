@@ -3,7 +3,7 @@ title: How to Sync Obsidian Across All Devices Using Git, Automatically and for 
 date: 2025-07-25
 --- 
 
-![[../images/posts/gitsync-all-devices-tutorial.png]]
+![Now also in video format!](https://youtu.be/Cu4-BPcveBI)
 
 If you're looking for a seamless, automatic and totally free way to sync your Obsidian vaults across all your devices, using Git, you're in the right place! The main benefits of this as your sync setup are the change history, freedom of choice and the fact that it remains completely free. I am currently using this exact solution across all of my devices to passively keep my notes in sync. 
 
