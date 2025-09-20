@@ -1327,11 +1327,6 @@ body {
     }
     &.internal {
       color: var(--text-a, var(--link-color));
-      background-color: color-mix(
-        in srgb,
-        var(--text-a, var(--link-color)),
-        #0000 85%
-      );
 
       cursor: var(--cursor-link);
       text-decoration-line: var(--link-decoration);
