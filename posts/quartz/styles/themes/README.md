@@ -1,11 +1,12 @@
-# Vanilla AMOLED Color
+# Primary
 
-- Theme: Vanilla AMOLED Color
-- Author: <a href="https://github.Com/Sskki-exe" target="_blank" rel="noopener noreferrer">sskki</a>
+- Theme: Primary
+- Author: Cecilia May
+- Support the author: <a href="https://ko-fi.com/ceciliamay" target="_blank" rel="noopener noreferrer">Ko-fi</a>
 
 ## Preview
 
-[Open live preview](https://quartz-themes.github.io/vanilla-amoled-color/)
+[Open live preview](https://quartz-themes.github.io/primary/)
 
 ## Usage
 
@@ -13,7 +14,7 @@
 
 ```yaml
 env:
-  THEME_NAME: vanilla-amoled-color
+  THEME_NAME: primary
 ```
 
 ```yaml
@@ -26,7 +27,7 @@ env:
 ```bash
 curl -s -S -o action.sh https://raw.githubusercontent.com/saberzero1/quartz-themes/master/action.sh
 
-./action.sh vanilla-amoled-color
+./action.sh primary
 ```
 
 ### Manual install
