@@ -24,13 +24,13 @@ const IndexPage: React.FC<PageProps> = () => {
   ] satisfies [string, string, IconDefinition, string][];
 
   return (
-    <main className="flex h-screen w-screen flex-col items-center justify-center gap-4 overflow-hidden bg-[#26211C] px-6 py-4 text-white md:px-8 md:py-4">
+    <main className="flex h-screen w-screen flex-col items-center justify-center gap-4 overflow-hidden bg-[#2E261F] px-6 py-4 text-white md:px-8 md:py-4">
       <div className="relative flex w-full flex-row items-center justify-start">
         <a href="https://viscouspotenti.al/" className="transition-all hover:scale-150" >
           <Icon className="h-16 w-16 md:mx-4" />
         </a>
 
-        <div className="text-md absolute left-1/2 z-50 flex -translate-x-1/2 items-center gap-12 rounded-full bg-[#2E261F] p-1 px-2 pl-4 font-semibold [font-variant:small-caps] md:p-3 md:pl-6">
+        <div className="text-md absolute left-1/2 z-50 flex -translate-x-1/2 items-center gap-12 rounded-full bg-[#26211C] p-1 px-2 pl-4 font-semibold [font-variant:small-caps] md:p-3 md:pl-6">
           <a href="/posts">Posts</a>
 
           <div className="hidden flex-row items-center justify-center gap-3 md:flex">
@@ -51,7 +51,7 @@ const IndexPage: React.FC<PageProps> = () => {
               <FontAwesomeIcon icon={faBars} />
             </button>
             {/* {open && ( */}
-            <div className={`absolute right-0 z-10 mt-4 flex flex-col gap-3 rounded-md bg-[#2E261F] p-3 ${!open ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} shadow-lg transition-all`}>
+            <div className={`absolute right-0 z-10 mt-4 flex flex-col gap-3 rounded-md bg-[#26211C] p-3 ${!open ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} shadow-lg transition-all`}>
               {socials.map(([link, label, icon, classNames]) => (
                 <a
                   key={link}
