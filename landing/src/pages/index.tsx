@@ -5,6 +5,7 @@ import GitSync from "../images/gitsync.svg"
 import Vocode from "../images/vocode.svg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
+  faDiscord,
   faGithub,
   faMedium,
   faReddit,
@@ -17,21 +18,22 @@ const IndexPage: React.FC<PageProps> = () => {
   const [open, setOpen] = React.useState(false);
   const socials = [
     ["https://github.com/ViscousPot/", "GitHub", faGithub, "bg-[#0d1117]  text-md md:text-xl text-white md:hover:bg-[#0d1117] md:hover:text-white md:text-neutral-900 md:bg-white"],
-    ["https://www.reddit.com/user/ViscousPotential/submitted/", "Reddit", faReddit, " text-mdmd:text-xl text-[#FF4500] bg-white md:hover:text-[#FF4500] md:hover:bg-white md:text-neutral-900 md:bg-white"],
+    ["https://discord.gg/fd4wSAuK", "Discord", faDiscord, "text-black bg-white md:hover:bg-[#7289da] md:hover:text-white md:text-black md:bg-white text-md md:text-xs p-2"],
+    ["https://www.reddit.com/user/ViscousPotential/submitted/", "Reddit", faReddit, "text-md md:text-xl text-[#FF4500] bg-white md:hover:text-[#FF4500] md:hover:bg-white md:text-neutral-900 md:bg-white"],
     ["https://viscouspotential.medium.com/", "Medium", faMedium, "text-black bg-white md:hover:bg-black md:hover:text-white md:text-black md:bg-white text-md md:text-xs p-2"],
   ] satisfies [string, string, IconDefinition, string][];
 
   return (
-    <main className="bg-black w-screen h-screen px-6 py-4 md:py-4 md:px-8 text-white flex flex-col items-center justify-center gap-4 overflow-hidden">
-      <div className="flex flex-row items-center justify-start relative w-full">
-        <a href="https://viscouspotenti.al/" className="hover:scale-150 transition-all" >
-          <Icon className="w-16 h-16 md:mx-4" />
+    <main className="flex h-screen w-screen flex-col items-center justify-center gap-4 overflow-hidden bg-[#26211C] px-6 py-4 text-white md:px-8 md:py-4">
+      <div className="relative flex w-full flex-row items-center justify-start">
+        <a href="https://viscouspotenti.al/" className="transition-all hover:scale-150" >
+          <Icon className="h-16 w-16 md:mx-4" />
         </a>
 
-        <div className="z-50 absolute left-1/2 -translate-x-1/2 pl-3 p-1 md:pl-6 md:p-3 text-md bg-neutral-900 rounded-full font-semibold flex items-center gap-12">
+        <div className="text-md absolute left-1/2 z-50 flex -translate-x-1/2 items-center gap-12 rounded-full bg-[#2E261F] p-1 px-2 pl-4 font-semibold [font-variant:small-caps] md:p-3 md:pl-6">
           <a href="/posts">Posts</a>
 
-          <div className="hidden md:flex flex-row items-center justify-center gap-3">
+          <div className="hidden flex-row items-center justify-center gap-3 md:flex">
             {socials.map(([link, label, icon, classNames]) => (
               <a
                 key={link}
@@ -39,34 +41,34 @@ const IndexPage: React.FC<PageProps> = () => {
                 href={link}
                 className={`inline-flex group items-center justify-center p-1 transition-all ${classNames} rounded-full aspect-square`}
               >
-                <FontAwesomeIcon icon={icon} className="scale-150 md:scale-100 md:group-hover:scale-150 -translate-x-[0.05rem]" />
+                <FontAwesomeIcon icon={icon} className="-translate-x-[0.05rem] scale-150 md:scale-100 md:group-hover:scale-150" />
               </a>
             ))}
           </div>
 
-          <div className="md:hidden relative">
-            <button onClick={() => setOpen(!open)} className="p-2 text-md rounded-full text-white">
+          <div className="relative md:hidden">
+            <button onClick={() => setOpen(!open)} className="text-md rounded-full p-2 text-white">
               <FontAwesomeIcon icon={faBars} />
             </button>
-            {open && (
-              <div className="absolute right-0 mt-4 bg-neutral-900 rounded-md shadow-lg flex flex-col gap-2 p-2 z-10">
-                {socials.map(([link, label, icon, classNames]) => (
-                  <a
-                    key={link}
-                    target="_blank"
-                    href={link}
-                    className={`inline-flex items-center p-2 text-md rounded ${classNames}`}
-                    onClick={() => setOpen(false)}
-                  >
-                    <FontAwesomeIcon icon={icon} className="mr-2" />
-                    {label}
-                  </a>
-                ))}
-              </div>
-            )}
+            {/* {open && ( */}
+            <div className={`absolute right-0 z-10 mt-4 flex flex-col gap-3 rounded-md bg-[#2E261F] p-3 ${!open ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} shadow-lg transition-all`}>
+              {socials.map(([link, label, icon, classNames]) => (
+                <a
+                  key={link}
+                  target="_blank"
+                  href={link}
+                  className={`inline-flex items-center p-2 text-md rounded ${classNames}`}
+                  onClick={() => setOpen(false)}
+                >
+                  <FontAwesomeIcon icon={icon} className="mr-2" />
+                  {label}
+                </a>
+              ))}
+            </div>
+            {/* )} */}
           </div>
         </div>
-        {/*<div className="absolute left-1/2 -translate-x-1/2 pl-6 p-3 text-md bg-neutral-900 rounded-full font-semibold flex flex-row items-center justify-center gap-12">
+        {/*<div className="text-md absolute left-1/2 flex -translate-x-1/2 flex-row items-center justify-center gap-12 rounded-full bg-neutral-900 p-3 pl-6 font-semibold">
           <a href="/posts">Posts</a>
           <div className="flex flex-row items-center justify-center gap-3">
             {([
@@ -75,56 +77,56 @@ const IndexPage: React.FC<PageProps> = () => {
               ["https://viscouspotential.medium.com/", faMedium, "text-black bg-white md:hover:bg-black md:hover:text-white md:text-black md:bg-white text-xs p-2"],
             ] satisfies [string, IconDefinition, string][]).map(([link, icon, classNames]) =>
               <a target="_blank" href={link} className={`inline-flex group items-center justify-center p-1 transition-all ${classNames} rounded-full aspect-square`}>
-                <FontAwesomeIcon icon={icon} className="scale-150 md:scale-100 md:group-hover:scale-150 -translate-x-[0.05rem]" />
+                <FontAwesomeIcon icon={icon} className="-translate-x-[0.05rem] scale-150 md:scale-100 md:group-hover:scale-150" />
               </a>
             )}
           </div>
         </div> */}
       </div>
-      <div className="flex flex-col md:flex-row h-full w-full gap-8">
-        <BlurryBlob firstBlobColor="bg-white" secondBlobColor="bg-white" >
-          <div className="absolute inset-0 z-20 flex-col flex border-8 md:border-0 md:group-hover:border-16 border-white rounded-3xl">
-            <a href="https://gitsync.viscouspotenti.al/" target="_blank" className="transition-all flex flex-col gap-2 md:gap-8 hover:scale-105 group/gitsync items-center justify-center h-full w-full">
-              <GitSync className="md:opacity-20 md:group-hover/gitsync:opacity-100 transition-all w-24 h-24 md:w-48 md:h-48 md:group-hover:w-32 md:group-hover:h-32" />
-              <h1 className="text-2xl md:text-6xl font-black md:h-0 md:opacity-20 md:group-hover/gitsync:opacity-100 md:overflow-hidden group-hover:h-auto md:leading-20">GitSync</h1>
+      <div className="flex h-full w-full flex-col gap-8 md:flex-row">
+        <BlurryBlob firstBlobColor="bg-[#D4BDA1]" secondBlobColor="bg-[#D4BDA1]" >
+          <div className="md:group-hover:border-16 absolute inset-0 z-20 flex flex-col rounded-3xl border-8 border-[#EBDAC6] transition-all md:border-0">
+            <a href="https://gitsync.viscouspotenti.al/" target="_blank" className="group/gitsync flex h-full w-full flex-col items-center justify-center gap-2 transition-all hover:scale-105 md:gap-8">
+              <GitSync className="h-24 w-24 transition-all md:h-48 md:w-48 md:opacity-20 md:group-hover:h-32 md:group-hover:w-32 md:group-hover/gitsync:opacity-100" />
+              <h1 className="md:leading-20 text-2xl font-black group-hover:h-auto md:h-0 md:overflow-hidden md:text-6xl md:opacity-20 md:group-hover/gitsync:opacity-100">GitSync</h1>
             </a>
-            <a href="https://gitsync.viscouspotenti.al/wiki" target="_blank" className="p-8 md:p-0 md:group-hover:p-12 transition-all flex items-center text-blue-300 md:text-white justify-center md:opacity-20 md:hover:text-blue-300 hover:scale-105 md:hover:opacity-100 md:h-0 md:group-hover:h-auto w-full rounded-3xl overflow-hidden gap-4">
-              <FontAwesomeIcon icon={faBookBookmark} className="text-xl md:text-2xl -translate-x-[0.05rem]" />
-              <h2 className="text-xl md:text-3xl font-bold">WIKI</h2>
+            <a href="https://gitsync.viscouspotenti.al/wiki" target="_blank" className="flex w-full items-center justify-center gap-4 overflow-hidden rounded-3xl p-8 text-blue-300 transition-all hover:scale-105 md:h-0 md:p-0 md:text-white md:opacity-20 md:hover:text-blue-300 md:hover:opacity-100 md:group-hover:h-auto md:group-hover:p-12">
+              <FontAwesomeIcon icon={faBookBookmark} className="-translate-x-[0.05rem] text-xl md:text-2xl" />
+              <h2 className="text-xl font-bold md:text-3xl">WIKI</h2>
             </a>
           </div>
         </BlurryBlob>
-        <BlurryBlob firstBlobColor="bg-white" secondBlobColor="bg-white" >
-          <div className="absolute inset-0 z-20 flex-col flex border-8 md:border-0 md:group-hover:border-16 border-white rounded-3xl">
-            <a className="transition-all flex flex-col gap-4 md:gap-8  hover:scale-105 group/gitsync items-center justify-center h-full w-full hover:cursor-not-allowed">
-              <Vocode className="md:opacity-20 md:group-hover/gitsync:opacity-100 transition-all text-[#6bb3a7] md:text-white md:group-hover/gitsync:text-[#6bb3a7] w-24 h-24 md:w-48 md:h-48 md:group-hover:w-32 md:group-hover:h-32" />
+        <BlurryBlob firstBlobColor="bg-[#D4BDA1]" secondBlobColor="bg-[#D4BDA1]" >
+          <div className="md:group-hover:border-16 absolute inset-0 z-20 flex flex-col rounded-3xl border-8 border-[#EBDAC6] transition-all md:border-0">
+            <a className="group/gitsync flex h-full w-full flex-col items-center justify-center gap-4 transition-all hover:scale-105 hover:cursor-not-allowed md:gap-8">
+              <Vocode className="h-24 w-24 text-[#6bb3a7] transition-all md:h-48 md:w-48 md:text-white md:opacity-20 md:group-hover:h-32 md:group-hover:w-32 md:group-hover/gitsync:text-[#6bb3a7] md:group-hover/gitsync:opacity-100" />
               <div className="flex flex-col items-center justify-center">
-                <h1 className="text-2xl md:text-6xl font-black md:h-0 md:opacity-20 md:group-hover/gitsync:opsacity-100 overflow-hidden md:group-hover:h-auto md:leading-20 line-through">Vocode</h1>
-                <h2 className="text-sm md:text-xl font-black md:h-0 md:opacity-20 md:group-hover/gitsync:ospacity-100 overflow-hidden md:group-hover:h-auto">COMING SOON</h2>
+                <h1 className="md:group-hover/gitsync:opsacity-100 md:leading-20 overflow-hidden text-2xl font-black line-through md:h-0 md:text-6xl md:opacity-20 md:group-hover:h-auto">Vocode</h1>
+                <h2 className="md:group-hover/gitsync:ospacity-100 overflow-hidden text-sm font-black md:h-0 md:text-xl md:opacity-20 md:group-hover:h-auto">COMING SOON</h2>
               </div>
             </a>
-            <a href="https://vocode-docs.viscouspotenti.al/" target="_blank" className="p-8 md:p-0 md:group-hover:p-12 transition-all flex items-center text-blue-300 md:text-white justify-center md:opacity-20 md:hover:text-blue-300 hover:scale-105 md:hover:opacity-100 md:h-0 md:group-hover:h-auto w-full rounded-3xl overflow-hidden gap-4">
-              <FontAwesomeIcon icon={faBookBookmark} className="text-xl md:text-2xl -translate-x-[0.05rem]" />
-              <h2 className="text-xl md:text-3xl font-bold">WIKI</h2>
+            <a href="https://vocode-docs.viscouspotenti.al/" target="_blank" className="flex w-full items-center justify-center gap-4 overflow-hidden rounded-3xl p-8 text-blue-300 transition-all hover:scale-105 md:h-0 md:p-0 md:text-[#EBDAC6] md:opacity-20 md:hover:text-blue-300 md:hover:opacity-100 md:group-hover:h-auto md:group-hover:p-12">
+              <FontAwesomeIcon icon={faBookBookmark} className="-translate-x-[0.05rem] text-xl md:text-2xl" />
+              <h2 className="text-xl font-bold md:text-3xl">WIKI</h2>
             </a>
-            {/* <a target="_blank" className="transition-all flex flex-col gap-2 md:gap-8 hover:scale-105 group/gitsync items-center justify-center h-full w-full">
-              <GitSync className="md:opacity-20 md:group-hover/gitsync:opacity-100 transition-all w-32 h-32 md:w-48 md:h-48 md:group-hover:w-32 md:group-hover:h-32" />
-              <h1 className="text-2xl md:text-6xl font-black md:h-0 md:opacity-20 md:group-hover/gitsync:opacity-100 md:overflow-hidden group-hover:h-auto md:leading-20">GitSync</h1>
+            {/* <a target="_blank" className="group/gitsync flex h-full w-full flex-col items-center justify-center gap-2 transition-all hover:scale-105 md:gap-8">
+              <GitSync className="h-32 w-32 transition-all md:h-48 md:w-48 md:opacity-20 md:group-hover:h-32 md:group-hover:w-32 md:group-hover/gitsync:opacity-100" />
+              <h1 className="md:leading-20 text-2xl font-black group-hover:h-auto md:h-0 md:overflow-hidden md:text-6xl md:opacity-20 md:group-hover/gitsync:opacity-100">GitSync</h1>
             </a>
-            <a href="https://vocode-docs.viscouspotenti.al/" target="_blank" className="p-8 md:p-0 md:group-hover:p-12 transition-all flex items-center text-blue-300 md:text-white justify-center md:opacity-20 md:hover:text-blue-300 hover:scale-105 md:hover:opacity-100 md:h-0 md:group-hover:h-auto w-full rounded-3xl overflow-hidden gap-4">
-              <FontAwesomeIcon icon={faBookBookmark} className="text-xl md:text-2xl -translate-x-[0.05rem]" />
-              <h2 className="text-xl md:text-3xl font-bold">WIKI</h2>
+            <a href="https://vocode-docs.viscouspotenti.al/" target="_blank" className="flex w-full items-center justify-center gap-4 overflow-hidden rounded-3xl p-8 text-blue-300 transition-all hover:scale-105 md:h-0 md:p-0 md:text-white md:opacity-20 md:hover:text-blue-300 md:hover:opacity-100 md:group-hover:h-auto md:group-hover:p-12">
+              <FontAwesomeIcon icon={faBookBookmark} className="-translate-x-[0.05rem] text-xl md:text-2xl" />
+              <h2 className="text-xl font-bold md:text-3xl">WIKI</h2>
             </a> */}
           </div>
         </BlurryBlob>
       </div>
-      {/* <div className="flex flex-col md:flex-row h-full w-full gap-8">
-        <div className="bg-[linear-gradient(124deg,black,#151515,black)] group rounded-3xl h-full w-full relative overflow-hidden">
+      {/* <div className="flex h-full w-full flex-col gap-8 md:flex-row">
+        <div className="group relative h-full w-full overflow-hidden rounded-3xl bg-[linear-gradient(124deg,black,#151515,black)]">
           <svg
             id="sw-js-blob-svg"
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute scale-50 rotate-90 h-full transition-all -bottom-100 -left-80 opacity-40 group-hover:opacity-20"
+            className="-bottom-100 absolute -left-80 h-full rotate-90 scale-50 opacity-40 transition-all group-hover:opacity-20"
           >
             <defs>
               <linearGradient id="sw-gradient" x1={0} x2={1} y1={1} y2={0}>
@@ -148,7 +150,7 @@ const IndexPage: React.FC<PageProps> = () => {
             id="sw-js-blob-svg"
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute -rotate-5 h-full transition-all -right-20 -top-80 opacity-80 group-hover:opacity-60"
+            className="-rotate-5 absolute -right-20 -top-80 h-full opacity-80 transition-all group-hover:opacity-60"
           >
             <defs>
               <linearGradient id="sw-gradient" x1={0} x2={1} y1={1} y2={0}>
@@ -169,23 +171,23 @@ const IndexPage: React.FC<PageProps> = () => {
             />
           </svg>
           <div className="absolute inset-0 z-10 backdrop-blur-3xl" />
-          <div className="absolute inset-0 z-20 flex-col flex border-8 md:border-0 md:group-hover:border-16 border-white rounded-3xl">
-            <a href="https://gitsync.viscouspotenti.al/" target="_blank" className="transition-all flex flex-col gap-2 md:gap-8 hover:scale-105 group/gitsync items-center justify-center h-full w-full">
-              <GitSync className="md:opacity-20 md:group-hover/gitsync:opacity-100 transition-all w-32 h-32 md:w-48 md:h-48" />
-              <h1 className="text-2xl md:text-6xl font-black md:h-0 md:opacity-20 md:group-hover/gitsync:opacity-100 md:overflow-hidden group-hover:h-auto md:leading-20">GitSync</h1>
+          <div className="md:group-hover:border-16 absolute inset-0 z-20 flex flex-col rounded-3xl border-8 border-white md:border-0">
+            <a href="https://gitsync.viscouspotenti.al/" target="_blank" className="group/gitsync flex h-full w-full flex-col items-center justify-center gap-2 transition-all hover:scale-105 md:gap-8">
+              <GitSync className="h-32 w-32 transition-all md:h-48 md:w-48 md:opacity-20 md:group-hover/gitsync:opacity-100" />
+              <h1 className="md:leading-20 text-2xl font-black group-hover:h-auto md:h-0 md:overflow-hidden md:text-6xl md:opacity-20 md:group-hover/gitsync:opacity-100">GitSync</h1>
             </a>
-            <a href="https://gitsync.viscouspotenti.al/wiki" target="_blank" className="p-8 md:p-0 md:group-hover:p-24 transition-all flex items-center text-blue-300 md:text-white justify-center md:opacity-20 md:hover:text-blue-300 hover:scale-105 md:hover:opacity-100 md:h-0 md:group-hover:h-auto w-full rounded-3xl overflow-hidden gap-4">
-              <FontAwesomeIcon icon={faBookBookmark} className="text-xl md:text-2xl -translate-x-[0.05rem]" />
-              <h2 className="text-xl md:text-3xl font-bold">WIKI</h2>
+            <a href="https://gitsync.viscouspotenti.al/wiki" target="_blank" className="flex w-full items-center justify-center gap-4 overflow-hidden rounded-3xl p-8 text-blue-300 transition-all hover:scale-105 md:h-0 md:p-0 md:text-white md:opacity-20 md:hover:text-blue-300 md:hover:opacity-100 md:group-hover:h-auto md:group-hover:p-24">
+              <FontAwesomeIcon icon={faBookBookmark} className="-translate-x-[0.05rem] text-xl md:text-2xl" />
+              <h2 className="text-xl font-bold md:text-3xl">WIKI</h2>
             </a>
           </div>
         </div>
-        <div className="bg-[linear-gradient(37deg,black,#151515,black)] rounded-3xl h-full w-full relative overflow-hidden group">
+        <div className="group relative h-full w-full overflow-hidden rounded-3xl bg-[linear-gradient(37deg,black,#151515,black)]">
           <svg
             id="sw-js-blob-svg"
             viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute rotate-90 scale-200 h-full -right-80 -top-40 opacity-60 group-hover:opacity-40"
+            className="scale-200 absolute -right-80 -top-40 h-full rotate-90 opacity-60 group-hover:opacity-40"
           >
             <defs>
               <linearGradient id="sw-gradient" x1={0} x2={1} y1={1} y2={0}>
@@ -206,17 +208,17 @@ const IndexPage: React.FC<PageProps> = () => {
             />
           </svg>
           <div className="absolute inset-0 z-10 backdrop-blur-3xl" />
-          <div className="absolute inset-0 z-20 flex-col flex  border-8 md:border-0 md:group-hover:border-16 border-white rounded-3xl">
-            <a className="transition-all flex flex-col gap-4 md:gap-8  hover:scale-105 group/gitsync items-center justify-center h-full w-full hover:cursor-not-allowed">
-              <Vocode className="md:opacity-20 md:group-hover/gitsync:opacity-100 transition-all text-[#6bb3a7] md:text-white md:group-hover/gitsync:text-[#6bb3a7] w-32 h-32 md:w-48 md:h-48" />
+          <div className="md:group-hover:border-16 absolute inset-0 z-20 flex flex-col rounded-3xl border-8 border-white md:border-0">
+            <a className="group/gitsync flex h-full w-full flex-col items-center justify-center gap-4 transition-all hover:scale-105 hover:cursor-not-allowed md:gap-8">
+              <Vocode className="h-32 w-32 text-[#6bb3a7] transition-all md:h-48 md:w-48 md:text-white md:opacity-20 md:group-hover/gitsync:text-[#6bb3a7] md:group-hover/gitsync:opacity-100" />
               <div className="flex flex-col items-center justify-center">
-                <h1 className="text-2xl md:text-6xl font-black md:h-0 md:opacity-20 md:group-hover/gitsync:opsacity-100 overflow-hidden md:group-hover:h-auto md:leading-20 line-through">Vocode</h1>
-                <h2 className="text-sm md:text-xl font-black md:h-0 md:opacity-20 md:group-hover/gitsync:ospacity-100 overflow-hidden md:group-hover:h-auto">COMING SOON</h2>
+                <h1 className="md:group-hover/gitsync:opsacity-100 md:leading-20 overflow-hidden text-2xl font-black line-through md:h-0 md:text-6xl md:opacity-20 md:group-hover:h-auto">Vocode</h1>
+                <h2 className="md:group-hover/gitsync:ospacity-100 overflow-hidden text-sm font-black md:h-0 md:text-xl md:opacity-20 md:group-hover:h-auto">COMING SOON</h2>
               </div>
             </a>
-            <a href="https://vocode-docs.viscouspotenti.al/" target="_blank" className="p-8 md:p-0 md:group-hover:p-24 transition-all flex items-center text-blue-300 md:text-white justify-center md:opacity-20 md:hover:text-blue-300 hover:scale-105 md:hover:opacity-100 md:h-0 md:group-hover:h-auto w-full rounded-3xl overflow-hidden gap-4">
-              <FontAwesomeIcon icon={faBookBookmark} className="text-xl md:text-2xl -translate-x-[0.05rem]" />
-              <h2 className="text-xl md:text-3xl font-bold">WIKI</h2>
+            <a href="https://vocode-docs.viscouspotenti.al/" target="_blank" className="flex w-full items-center justify-center gap-4 overflow-hidden rounded-3xl p-8 text-blue-300 transition-all hover:scale-105 md:h-0 md:p-0 md:text-white md:opacity-20 md:hover:text-blue-300 md:hover:opacity-100 md:group-hover:h-auto md:group-hover:p-24">
+              <FontAwesomeIcon icon={faBookBookmark} className="-translate-x-[0.05rem] text-xl md:text-2xl" />
+              <h2 className="text-xl font-bold md:text-3xl">WIKI</h2>
             </a>
           </div>
         </div>
