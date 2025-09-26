@@ -268,12 +268,12 @@ If you like, you can take this opportunity to load up the folder with some initi
 The last thing to do for our desktop setup is to make sure we have auto sync. For this, we will be using obsidian-git, which is an Obsidian Community Plugin that automates uploading and downloading the changes in your vault at given intervals, as well as intelligently, when you are done editing.
 
 1. Go to **Settings** > **Community Plugins** in Obsidian.
-2. Click **Browse** and search for `Obsidian Git`.
+2. Click **Browse** and search for `Git`.
 3. Install and enable the `Git` plugin.
 
 ### Configure Obsidian-Git
 
-1. Go to **Settings** > **Obsidian Git**.
+1. Go to **Settings** > **Git**.
 2. Set the following options:
    - **Auto commit-and-sync interval (minutes)**: (e.g., 5 minutes).
    - **Auto commit-and-sync after stopping file edits**: Enabled.
