@@ -10,6 +10,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/ViscousPot/",
+      Discord: "https://discord.gg/fd4wSAuK",
       Reddit: "https://www.reddit.com/user/ViscousPotential/submitted/",
       Medium: "https://viscouspotential.medium.com/",
     },
