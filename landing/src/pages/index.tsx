@@ -18,7 +18,7 @@ const IndexPage: React.FC<PageProps> = () => {
   const [open, setOpen] = React.useState(false);
   const socials = [
     ["https://github.com/ViscousPot/", "GitHub", faGithub, "bg-[#0d1117]  text-md md:text-xl text-white md:hover:bg-[#0d1117] md:hover:text-white md:text-neutral-900 md:bg-white"],
-    ["https://discord.gg/fd4wSAuK", "Discord", faDiscord, "text-black bg-white md:hover:bg-[#7289da] md:hover:text-white md:text-black md:bg-white text-md md:text-xs p-2"],
+    ["https://discord.gg/cgvjdDyzzB", "Discord", faDiscord, "text-black bg-white md:hover:bg-[#7289da] md:hover:text-white md:text-black md:bg-white text-md md:text-xs p-2"],
     ["https://www.reddit.com/user/ViscousPotential/submitted/", "Reddit", faReddit, "text-md md:text-xl text-[#FF4500] bg-white md:hover:text-[#FF4500] md:hover:bg-white md:text-neutral-900 md:bg-white"],
     ["https://viscouspotential.medium.com/", "Medium", faMedium, "text-black bg-white md:hover:bg-black md:hover:text-white md:text-black md:bg-white text-md md:text-xs p-2"],
   ] satisfies [string, string, IconDefinition, string][];
