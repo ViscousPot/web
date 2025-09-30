@@ -97,6 +97,7 @@ html[saved-theme="dark"] {
     --shadow-l:
       0px 1.8px 7.3px #000000, 0px 6.3px 24.7px #000000, 0px 30px 90px #000000;
     --background-primary: var(--color-d-gray-100);
+    --editor-bgpattern-color: var(--color-d-gray-70);
     --background-primary-alt: var(--color-d-gray-110);
     --background-secondary: var(--color-d-gray-120);
     --background-modifier-hover: #000000;
@@ -354,6 +355,7 @@ html[saved-theme="light"] {
     --shadow-l:
       0px 1.8px 7.3px #000000, 0px 6.3px 24.7px #000000, 0px 30px 90px #000000;
     --background-primary: var(--color-l-gray-20);
+    --editor-bgpattern-color: var(--color-l-gray-60);
     --background-primary-alt: var(--color-l-gray-30);
     --background-secondary: var(--color-l-gray-40);
     --background-modifier-hover: #ffffff;
@@ -735,6 +737,8 @@ body {
   line-height: var(--line-height-tight);
   font-size: var(--font-ui-medium);
   background-color: var(--background-primary);
+  background-size: 25px 25px;
+  background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
   color: var(--text-normal);
   -webkit-tap-highlight-color: #ffffff;
   user-select: none;
@@ -1179,6 +1183,8 @@ body {
   background-color: var(--background-primary);
 
   background-color: var(--background-primary);
+  background-size: 25px 25px;
+  background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
 
   overflow: initial;
 
@@ -1222,11 +1228,15 @@ body {
     background-color: var(--background-secondary);
 
     background-color: var(--background-primary);
+    background-size: 25px 25px;
+    background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
 
     > #quartz-root {
       background-color: var(--background-primary);
 
       background-color: var(--background-primary);
+      background-size: 25px 25px;
+      background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
     }
   }
 
@@ -1248,10 +1258,16 @@ body {
     &.left:has(.explorer),
     &.right {
       background-color: var(--background-primary);
+      background-size: 25px 25px;
+      background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
+    
     }
     @media all and not ($desktop) {
       &.right {
         background-color: var(--background-primary);
+        background-size: 25px 25px;
+        background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
+    
       }
     }
     @media all and ($mobile) {
@@ -1259,6 +1275,9 @@ body {
         :not(.folder-container, a[data-for]):before,
         :after {
           background-color: var(--background-primary);
+          background-size: 25px 25px;
+          background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
+    
 
           content: " ";
           display: block;
@@ -1892,6 +1911,9 @@ body {
     .explorer-content {
       @media all and ($mobile) {
         background-color: var(--background-primary);
+        background-size: 25px 25px;
+        background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
+    
 
         left: -1rem;
       }
@@ -2183,6 +2205,9 @@ body {
         border-color: var(--background-modifier-border, var(--color-base-35));
 
         background-color: var(--background-primary);
+        background-size: 25px 25px;
+        background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
+    
 
         border: var(--prompt-border-width) solid var(--prompt-border-color);
 
@@ -2197,6 +2222,9 @@ body {
           width: 100%;
           padding-inline-end: var(--size-4-12);
           background-color: var(--background-primary);
+          background-size: 25px 25px;
+          background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
+    
           font-size: var(--font-ui-medium);
           border: none;
           height: var(--prompt-input-height);
@@ -2302,6 +2330,8 @@ body {
         border: 1px solid
           var(--background-modifier-border-hover, var(--color-base-35));
         background-color: var(--background-primary);
+        background-size: 25px 25px;
+        background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
       }
     }
   }
@@ -2329,6 +2359,9 @@ body {
     border: unset;
 
     background-color: var(--background-primary);
+    background-size: 25px 25px;
+    background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
+    
     border: 1px solid var(--background-modifier-border);
     border-radius: var(--radius-m);
     box-shadow: var(--shadow-s);
@@ -2345,6 +2378,8 @@ body {
       border: 1px solid var(--background-modifier-border);
 
       background-color: var(--background-primary);
+      background-size: 25px 25px;
+      background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
 
       border-radius: var(--radius-m);
     }
