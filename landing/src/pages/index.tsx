@@ -69,7 +69,7 @@ const IndexPage: React.FC<PageProps> = () => {
       </div>
       <div className="flex h-full w-full flex-col gap-8 md:flex-row">
         <BlurryBlob firstBlobColor="bg-[#D4BDA1]" secondBlobColor="bg-[#D4BDA1]" >
-          <div className="md:group-hover:border-16 absolute inset-0 z-20 flex flex-col rounded-3xl border-8 border-[#EBDAC6] transition-all md:border-0">
+          <div className="md:group-hover:border-16 absolute inset-0 z-20 flex flex-col rounded-3xl border-8 border-[#ebdac659] transition-all md:border-2 md:group-hover:border-[#EBDAC6]">
             <a href="https://gitsync.viscouspotenti.al/" target="_blank" className="group/gitsync flex h-full w-full flex-col items-center justify-center gap-2 transition-all hover:scale-105 md:gap-8">
               <GitSync className="h-24 w-24 transition-all md:h-48 md:w-48 md:opacity-20 md:group-hover:h-32 md:group-hover:w-32 md:group-hover/gitsync:opacity-100" />
               <h1 className="md:leading-20 text-2xl font-black group-hover:h-auto md:h-0 md:overflow-hidden md:text-6xl md:opacity-20 md:group-hover/gitsync:opacity-100">GitSync</h1>
@@ -81,7 +81,7 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
         </BlurryBlob>
         <BlurryBlob firstBlobColor="bg-[#D4BDA1]" secondBlobColor="bg-[#D4BDA1]" >
-          <div className="md:group-hover:border-16 absolute inset-0 z-20 flex flex-col rounded-3xl border-8 border-[#EBDAC6] transition-all md:border-0">
+          <div className="md:group-hover:border-16 absolute inset-0 z-20 flex flex-col rounded-3xl border-8 border-[#ebdac659] transition-all md:border-2 md:group-hover:border-[#EBDAC6]">
             <a className="group/gitsync flex h-full w-full flex-col items-center justify-center gap-4 transition-all hover:scale-105 hover:cursor-not-allowed md:gap-8">
               <Vocode className="h-24 w-24 text-[#6bb3a7] transition-all md:h-48 md:w-48 md:text-white md:opacity-20 md:group-hover:h-32 md:group-hover:w-32 md:group-hover/gitsync:text-[#6bb3a7] md:group-hover/gitsync:opacity-100" />
               <div className="flex flex-col items-center justify-center">
@@ -103,4 +103,35 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>ViscousPotential</title>
+export const Head: HeadFC = () => <>
+  <title>ViscousPotential</title>
+
+  <meta charSet="utf-8" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="og:site_name" content="ViscousPotential"></meta>
+  <meta property="og:title" content="ViscousPotential" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ViscousPotential" />
+  <meta name="twitter:description" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image:alt" content="" />
+
+  <meta property="og:image" content="/icon.png" />
+  <meta property="og:image:url" content="/icon.png" />
+  <meta name="twitter:image" content="/icon.png" />
+  <meta
+    property="og:image:type"
+    content="image/png"
+  />
+
+  <meta property="twitter:domain" content="viscouspotenti.al"></meta>
+  <meta property="og:url" content="viscouspotenti.al"></meta>
+  <meta property="twitter:url" content="viscouspotenti.al"></meta>
+
+  <link rel="icon" href="/icon.png" />
+  <meta name="description" content="" />
+  <meta name="generator" content="Quartz" />
+</>
