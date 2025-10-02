@@ -1,7 +1,7 @@
 ---
 title: How to Sync Obsidian Across All Devices Using Git, Automatically and for Free
 date: 2025-07-25
-socialImage: images/gitsync-all-devices-tutorial.png
+socialImage: images/posts/gitsync-all-devices-tutorial.png
 ---
 
 ![Now also in video format!](https://youtu.be/Cu4-BPcveBI)
