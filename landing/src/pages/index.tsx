@@ -119,13 +119,13 @@ export const Head: HeadFC = () => <>
   <meta property="og:description" content="" />
   <meta property="og:image:alt" content="" />
 
-  <meta property="og:image" content="/icon.png" />
+  {/* <meta property="og:image" content="/icon.png" />
   <meta property="og:image:url" content="/icon.png" />
   <meta name="twitter:image" content="/icon.png" />
   <meta
     property="og:image:type"
     content="image/png"
-  />
+  /> */}
 
   <meta property="twitter:domain" content="viscouspotenti.al"></meta>
   <meta property="og:url" content="viscouspotenti.al"></meta>
