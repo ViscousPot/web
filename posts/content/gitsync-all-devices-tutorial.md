@@ -388,7 +388,11 @@ _on iOS_
 
 Hopefully this has been helpful in getting Obsidian set up for auto sync using Git\! If you find anything wrong with this guide or have any issues, please do leave a comment so that it can be kept up to date.
 
+**Join the giveaway for GitSync Premium at this link:**
+https://discord.com/invite/cgvjdDyzzB
+
 Before you go on your way, here are a few handy links to bookmark:
+Make sure to replace {username} and {repository-name} with your actual GitHub username and repository name (e.g. https://github.com/ViscousPot/GitSync):
 
 - **Checkout your change history**
   - https://github.com/{username}/{repository-name}
