@@ -10,7 +10,6 @@ socialImage: images/posts/3d-printed-incense-holder.png
 
 **Follow me on my journey to designing a better incense holder that is quick to print and actually keeps the ash in one place instead of several!**
 
-_Click here to read for free if you aren’t a member!_
 **AI is not involved in my process**
 
 ---
@@ -159,5 +158,3 @@ Admittedly, **that is quite a long total print time**, but it's a compromise I'm
 [Patreon Post](https://www.patreon.com/posts/best-3d-printed-142125215?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link)
 [Printables Link](https://www.printables.com/model/1460323-incense-holdertower)
 [Thingiverse Link](https://www.thingiverse.com/thing:7183172)
-
-![[images/posts/3d-printed-incense-holder.png]]
