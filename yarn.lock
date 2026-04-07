@@ -1165,6 +1165,11 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.2.10.tgz"
   integrity sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==
 
+"@fontsource-variable/atkinson-hyperlegible-next@^5.2.6":
+  version "5.2.6"
+  resolved "https://registry.npmjs.org/@fontsource-variable/atkinson-hyperlegible-next/-/atkinson-hyperlegible-next-5.2.6.tgz"
+  integrity sha512-D0Z8peFkRGYACvmWp8Sl8YPGYLBEJbzqapugtsMEYSUUtpQDiZVDHjk9s7bqB4hSCRYCrKuW6V1V+mnHybVnPw==
+
 "@fortawesome/fontawesome-common-types@6.7.2":
   version "6.7.2"
   resolved "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.7.2.tgz"
@@ -8418,6 +8423,7 @@ klona@^2.0.4:
     "@fortawesome/free-regular-svg-icons" "^6.7.2"
     "@fortawesome/free-solid-svg-icons" "^6.7.2"
     "@fortawesome/react-fontawesome" "^0.2.2"
+    clsx "^2.1.1"
     gatsby "^5.14.1"
     gatsby-plugin-image "^3.14.0"
     gatsby-plugin-react-svg "^3.3.0"
@@ -8425,8 +8431,11 @@ klona@^2.0.4:
     gatsby-plugin-sitemap "^6.14.0"
     gatsby-source-filesystem "^5.14.0"
     gatsby-transformer-sharp "^5.14.0"
+    lucide-react "^0.525.0"
     react "^18.2.0"
     react-dom "^18.2.0"
+    tailwind-merge "^3.3.1"
+    tailwindcss-animate "^1.0.7"
 
 language-subtag-registry@^0.3.20:
   version "0.3.23"

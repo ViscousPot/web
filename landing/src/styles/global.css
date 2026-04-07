@@ -1,4 +1,9 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/atkinson-hyperlegible-next';
+
+@theme {
+  --font-sans: 'Atkinson Hyperlegible Next Variable', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
@@ -15,6 +20,11 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentcolor);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
   }
 
 

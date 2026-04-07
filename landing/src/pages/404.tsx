@@ -6,7 +6,7 @@ const NotFoundPage: React.FC = () => {
   return (
     <main className="flex h-screen w-screen flex-col items-center justify-center gap-4 overflow-hidden bg-[#2E261F] px-6 py-4 text-white md:px-8 md:py-4">
       <div className="flex flex-col items-center justify-center text-center">
-        <h1 className="mb-4 text-6xl font-black text-[#EBDAC6] md:text-9xl">
+        <h1 className="mb-4 text-6xl font-extrabold text-[#EBDAC6] md:text-9xl">
           404
         </h1>
         <h2 className="mb-6 text-2xl font-semibold md:text-4xl">

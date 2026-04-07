@@ -7,131 +7,271 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faDiscord,
   faGithub,
+  faInstagram,
   faMedium,
+  faPatreon,
   faReddit,
-  IconDefinition
+  faYoutube,
+  IconDefinition,
 } from '@fortawesome/free-brands-svg-icons'
-import { faBars, faBookBookmark } from "@fortawesome/free-solid-svg-icons"
+import { faArrowUpRightFromSquare, faBookBookmark } from "@fortawesome/free-solid-svg-icons"
 import BlurryBlob from "../components/animata/blurry-blob"
 
+type Social = {
+  href: string
+  label: string
+  icon: IconDefinition
+  /** Tailwind classes for the hover/focus brand color */
+  hover: string
+}
+
+const SOCIALS: Social[] = [
+  { href: "https://www.youtube.com/@ViscousPotential", label: "YouTube", icon: faYoutube, hover: "hover:bg-[#FF0000] hover:text-white focus-visible:bg-[#FF0000] focus-visible:text-white" },
+  { href: "https://github.com/ViscousPot/", label: "GitHub", icon: faGithub, hover: "hover:bg-[#0d1117] hover:text-white focus-visible:bg-[#0d1117] focus-visible:text-white" },
+  { href: "https://discord.gg/cgvjdDyzzB", label: "Discord", icon: faDiscord, hover: "hover:bg-[#5865F2] hover:text-white focus-visible:bg-[#5865F2] focus-visible:text-white" },
+  { href: "https://www.patreon.com/c/ViscousPotential", label: "Patreon", icon: faPatreon, hover: "hover:bg-[#FF424D] hover:text-white focus-visible:bg-[#FF424D] focus-visible:text-white" },
+  { href: "https://www.reddit.com/user/ViscousPotential/submitted/", label: "Reddit", icon: faReddit, hover: "hover:bg-[#FF4500] hover:text-white focus-visible:bg-[#FF4500] focus-visible:text-white" },
+  { href: "https://viscouspotenti.medium.com/", label: "Medium", icon: faMedium, hover: "hover:bg-black hover:text-white focus-visible:bg-black focus-visible:text-white" },
+  { href: "https://www.instagram.com/viscouspotential/", label: "Instagram", icon: faInstagram, hover: "hover:bg-[#E4405F] hover:text-white focus-visible:bg-[#E4405F] focus-visible:text-white" },
+]
+
 const IndexPage: React.FC<PageProps> = () => {
-  const [open, setOpen] = React.useState(false);
-  const socials = [
-    ["https://github.com/ViscousPot/", "GitHub", faGithub, "bg-[#0d1117]  text-md md:text-xl text-white md:hover:bg-[#0d1117] md:hover:text-white md:text-neutral-900 md:bg-white"],
-    ["https://discord.gg/cgvjdDyzzB", "Discord", faDiscord, "text-black bg-white md:hover:bg-[#7289da] md:hover:text-white md:text-black md:bg-white text-md md:text-xs p-2"],
-    ["https://www.reddit.com/user/ViscousPotential/submitted/", "Reddit", faReddit, "text-md md:text-xl text-[#FF4500] bg-white md:hover:text-[#FF4500] md:hover:bg-white md:text-neutral-900 md:bg-white"],
-    ["https://viscouspotential.medium.com/", "Medium", faMedium, "text-black bg-white md:hover:bg-black md:hover:text-white md:text-black md:bg-white text-md md:text-xs p-2"],
-  ] satisfies [string, string, IconDefinition, string][];
-
   return (
-    <main className="flex h-screen w-screen flex-col items-center justify-center gap-4 overflow-hidden bg-[#2E261F] px-6 py-4 text-white md:px-8 md:py-4">
-      <div className="relative flex w-full flex-row items-center justify-start">
-        <a href="https://viscouspotenti.al/" className="transition-all hover:scale-150" >
-          <Icon className="h-16 w-16 md:mx-4" />
+    <main className="relative flex min-h-screen w-full flex-col bg-[#2E261F] text-[#F5ECDF]">
+      {/* Header */}
+      <header className="relative z-30 flex w-full items-center justify-between px-6 py-5 md:px-10 md:py-6">
+        <a href="https://viscouspotenti.al/" aria-label="ViscousPotential home" className="inline-flex items-center gap-3 transition-transform hover:scale-[1.04]">
+          <Icon className="h-12 w-12 md:h-14 md:w-14" />
+          <span className="hidden text-lg font-extrabold tracking-tight [font-variant:small-caps] sm:inline">ViscousPotential</span>
         </a>
+        <nav aria-label="Primary">
+          <a
+            href="/posts"
+            className="inline-flex items-center gap-2 rounded-full bg-[#26211C] px-5 py-2 text-sm font-semibold [font-variant:small-caps] ring-1 ring-[#ebdac633] transition-all hover:bg-[#3a322a] hover:ring-[#EBDAC6] md:text-base"
+          >
+            Posts
+            <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-xs opacity-70" />
+          </a>
+        </nav>
+      </header>
 
-        <div className="text-md absolute left-1/2 z-50 flex -translate-x-1/2 items-center gap-12 rounded-full bg-[#26211C] p-1 px-2 pl-4 font-semibold [font-variant:small-caps] md:p-3 md:pl-6">
-          <a href="/posts">Posts</a>
+      {/* Hero */}
+      <section className="relative z-10 flex flex-col items-center justify-center px-6 pt-6 pb-10 text-center md:pt-10 md:pb-16">
+        <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#ebdac633] bg-[#26211C]/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#D4BDA1] backdrop-blur-sm md:text-sm">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#D4BDA1]" />
+          Independent dev
+        </p>
+        <h1 className="bg-gradient-to-b from-[#FBF3E4] via-[#EBDAC6] to-[#A8916F] bg-clip-text text-4xl font-extrabold tracking-tight text-transparent [font-variant:small-caps] sm:text-5xl md:text-7xl lg:text-8xl">
+          ViscousPotential
+        </h1>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#D4BDA1] md:text-lg">
+          Tools and experiments for developers
+        </p>
+      </section>
 
-          <div className="hidden flex-row items-center justify-center gap-3 md:flex">
-            {socials.map(([link, label, icon, classNames]) => (
-              <a
-                key={link}
-                target="_blank"
-                href={link}
-                className={`inline-flex group items-center justify-center p-1 transition-all ${classNames} rounded-full aspect-square`}
-              >
-                <FontAwesomeIcon icon={icon} className="-translate-x-[0.05rem] scale-150 md:scale-100 md:group-hover:scale-150" />
-              </a>
-            ))}
-          </div>
-
-          <div className="relative md:hidden">
-            <button onClick={() => setOpen(!open)} className="text-md rounded-full p-2 text-white">
-              <FontAwesomeIcon icon={faBars} />
-            </button>
-            <div className={`absolute right-0 z-10 mt-4 flex flex-col gap-3 rounded-md bg-[#26211C] p-3 ${!open ? "opacity-0 pointer-events-none" : "opacity-100 pointer-events-auto"} shadow-lg transition-all`}>
-              {socials.map(([link, label, icon, classNames]) => (
-                <a
-                  key={link}
-                  target="_blank"
-                  href={link}
-                  className={`inline-flex items-center p-2 text-md rounded ${classNames}`}
-                  onClick={() => setOpen(false)}
-                >
-                  <FontAwesomeIcon icon={icon} className="mr-2" />
-                  {label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="flex h-full w-full flex-col gap-8 md:flex-row">
-        <BlurryBlob firstBlobColor="bg-[#D4BDA1]" secondBlobColor="bg-[#D4BDA1]" >
-          <div className="md:group-hover:border-16 absolute inset-0 z-20 flex flex-col rounded-3xl border-8 border-[#ebdac659] transition-all md:border-2 md:group-hover:border-[#EBDAC6]">
-            <a href="https://gitsync.viscouspotenti.al/" target="_blank" className="group/gitsync flex h-full w-full flex-col items-center justify-center gap-2 transition-all hover:scale-105 md:gap-8">
-              <GitSync className="h-24 w-24 transition-all md:h-48 md:w-48 md:opacity-20 md:group-hover:h-32 md:group-hover:w-32 md:group-hover/gitsync:opacity-100" />
-              <h1 className="md:leading-20 text-2xl font-black group-hover:h-auto md:h-0 md:overflow-hidden md:text-6xl md:opacity-20 md:group-hover/gitsync:opacity-100">GitSync</h1>
-            </a>
-            <a href="https://gitsync.viscouspotenti.al/wiki" target="_blank" className="flex w-full items-center justify-center gap-4 overflow-hidden rounded-3xl p-8 text-blue-300 transition-all hover:scale-105 md:h-0 md:p-0 md:text-white md:opacity-20 md:hover:text-blue-300 md:hover:opacity-100 md:group-hover:h-auto md:group-hover:p-12">
-              <FontAwesomeIcon icon={faBookBookmark} className="-translate-x-[0.05rem] text-xl md:text-2xl" />
-              <h2 className="text-xl font-bold md:text-3xl">WIKI</h2>
-            </a>
-          </div>
-        </BlurryBlob>
-        <BlurryBlob firstBlobColor="bg-[#D4BDA1]" secondBlobColor="bg-[#D4BDA1]" >
-          <div className="md:group-hover:border-16 absolute inset-0 z-20 flex flex-col rounded-3xl border-8 border-[#ebdac659] transition-all md:border-2 md:group-hover:border-[#EBDAC6]">
-            <a className="group/gitsync flex h-full w-full flex-col items-center justify-center gap-4 transition-all hover:scale-105 hover:cursor-not-allowed md:gap-8">
-              <Vocode className="h-24 w-24 text-[#6bb3a7] transition-all md:h-48 md:w-48 md:text-white md:opacity-20 md:group-hover:h-32 md:group-hover:w-32 md:group-hover/gitsync:text-[#6bb3a7] md:group-hover/gitsync:opacity-100" />
-              <div className="flex flex-col items-center justify-center">
-                <h1 className="md:group-hover/gitsync:opsacity-100 md:leading-20 overflow-hidden text-2xl font-black line-through md:h-0 md:text-6xl md:opacity-20 md:group-hover:h-auto">Vocode</h1>
-                <h2 className="md:group-hover/gitsync:ospacity-100 overflow-hidden text-sm font-black md:h-0 md:text-xl md:opacity-20 md:group-hover:h-auto">COMING SOON</h2>
+      {/* Products */}
+      <section className="relative z-10 mx-auto grid w-full max-w-6xl flex-1 grid-cols-1 gap-6 px-6 pb-12 md:grid-cols-2 md:gap-8 md:px-10 md:pb-16">
+        {/* GitSync */}
+        <article className="relative min-h-[26rem] md:min-h-[32rem]">
+          <BlurryBlob firstBlobColor="bg-[#D4BDA1]" secondBlobColor="bg-[#A8916F]">
+            <div className="absolute inset-0 z-20 flex flex-col rounded-3xl border-2 border-[#ebdac659] bg-[#2E261F]/30 p-6 backdrop-blur-[2px] transition-colors duration-300 md:p-8 md:hover:border-[#EBDAC6] md:hover:bg-[#2E261F]/55">
+              <div className="flex items-center gap-4">
+                <GitSync className="h-16 w-16 shrink-0 md:h-20 md:w-20" />
+                <div className="min-w-0">
+                  <h2 className="text-3xl font-extrabold leading-none md:text-4xl">GitSync</h2>
+                  <p className="mt-1 text-sm font-medium text-[#D4BDA1] md:text-base">Mobile git client for Android & iOS</p>
+                </div>
               </div>
-            </a>
-            <a href="https://vocode-docs.viscouspotenti.al/" target="_blank" className="flex w-full items-center justify-center gap-4 overflow-hidden rounded-3xl p-8 text-blue-300 transition-all hover:scale-105 md:h-0 md:p-0 md:text-[#EBDAC6] md:opacity-20 md:hover:text-blue-300 md:hover:opacity-100 md:group-hover:h-auto md:group-hover:p-12">
-              <FontAwesomeIcon icon={faBookBookmark} className="-translate-x-[0.05rem] text-xl md:text-2xl" />
-              <h2 className="text-xl font-bold md:text-3xl">WIKI</h2>
-            </a>
-          </div>
-        </BlurryBlob>
-      </div>
-      <div className="h-4 md:h-12" />
+
+              <p className="mt-5 flex-1 text-sm leading-relaxed text-[#EBDAC6]/90 md:text-base">
+                A cross-platform git client that keeps a folder synced between a remote repository and your device. One-time setup, automatic background sync, HTTPS / SSH / OAuth, built for the way you actually use your phone.
+              </p>
+
+              <div className="mt-5 flex flex-wrap items-center gap-2 text-xs font-semibold text-[#D4BDA1] md:text-sm">
+                <span className="rounded-full border border-[#ebdac633] px-3 py-1">Android</span>
+                <span className="rounded-full border border-[#ebdac633] px-3 py-1">iOS</span>
+                <span className="rounded-full border border-[#ebdac633] px-3 py-1">Open Source</span>
+                <span className="rounded-full border border-[#FFCB6B66] bg-[#FFCB6B14] px-3 py-1 text-[#FFCB6B]">★ 2024 Obsidian Gem</span>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="https://gitsync.viscouspotenti.al/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#EBDAC6] px-5 py-2.5 text-sm font-bold text-[#2E261F] transition-all hover:bg-white hover:scale-[1.03] md:text-base"
+                >
+                  Get GitSync
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-xs" />
+                </a>
+                <a
+                  href="https://gitsync.viscouspotenti.al/wiki"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#ebdac659] px-5 py-2.5 text-sm font-bold text-[#EBDAC6] transition-all hover:border-[#EBDAC6] hover:bg-[#26211C] md:text-base"
+                >
+                  <FontAwesomeIcon icon={faBookBookmark} />
+                  Wiki
+                </a>
+              </div>
+            </div>
+          </BlurryBlob>
+        </article>
+
+        {/* Vocode */}
+        <article className="relative min-h-[26rem] md:min-h-[32rem]">
+          <BlurryBlob firstBlobColor="bg-[#6bb3a7]" secondBlobColor="bg-[#3f8079]">
+            <div className="absolute inset-0 z-20 flex flex-col rounded-3xl border-2 border-[#ebdac659] bg-[#2E261F]/30 p-6 backdrop-blur-[2px] transition-colors duration-300 md:p-8 md:hover:border-[#EBDAC6] md:hover:bg-[#2E261F]/55">
+              <div className="flex items-center gap-4">
+                <Vocode className="h-16 w-16 shrink-0 text-[#6bb3a7] md:h-20 md:w-20" />
+                <div className="min-w-0">
+                  <div className="flex items-center gap-3">
+                    <h2 className="text-3xl font-extrabold leading-none md:text-4xl">Vocode</h2>
+                    <span className="rounded-full bg-[#6bb3a722] px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-[#6bb3a7] md:text-xs">
+                      In beta
+                    </span>
+                  </div>
+                  <p className="mt-1 text-sm font-medium text-[#D4BDA1] md:text-base">Community plugin platform</p>
+                </div>
+              </div>
+
+              <p className="mt-5 flex-1 text-sm leading-relaxed text-[#EBDAC6]/90 md:text-base">
+                An extensible plugin platform with a growing community ecosystem. Core plugins, community-built plugins, and full documentation. Build, share, and extend what Vocode can do.
+              </p>
+
+              <div className="mt-5 flex flex-wrap items-center gap-2 text-xs font-semibold text-[#D4BDA1] md:text-sm">
+                <span className="rounded-full border border-[#ebdac633] px-3 py-1">Plugins</span>
+                <span className="rounded-full border border-[#ebdac633] px-3 py-1">Extensible</span>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <span
+                  aria-disabled="true"
+                  className="inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-[#26211C] px-5 py-2.5 text-sm font-bold text-[#D4BDA1]/70 ring-1 ring-[#ebdac633] md:text-base"
+                >
+                  In Beta
+                </span>
+                <a
+                  href="https://vocode-docs.viscouspotenti.al/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[#ebdac659] px-5 py-2.5 text-sm font-bold text-[#EBDAC6] transition-all hover:border-[#EBDAC6] hover:bg-[#26211C] md:text-base"
+                >
+                  <FontAwesomeIcon icon={faBookBookmark} />
+                  Docs
+                </a>
+              </div>
+            </div>
+          </BlurryBlob>
+        </article>
+      </section>
+
+      {/* Footer with socials */}
+      <footer className="relative z-10 mt-auto border-t border-[#ebdac622] bg-[#26211C]/40 px-6 py-8 backdrop-blur-sm md:px-10">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 md:flex-row md:justify-between">
+          <p className="text-xs text-[#D4BDA1] md:text-sm">
+            © {new Date().getFullYear()} ViscousPotential · Independent Dev
+          </p>
+          <ul className="flex flex-wrap items-center justify-center gap-2">
+            {SOCIALS.map(({ href, label, icon, hover }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  title={label}
+                  className={`inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#2E261F] text-base text-[#EBDAC6] ring-1 ring-[#ebdac633] transition-all hover:scale-110 hover:ring-transparent focus-visible:scale-110 focus-visible:outline-none focus-visible:ring-transparent ${hover}`}
+                >
+                  <FontAwesomeIcon icon={icon} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </footer>
     </main>
   )
 }
 
 export default IndexPage
 
-export const Head: HeadFC = () => <>
-  <title>ViscousPotential</title>
+const PAGE_DESCRIPTION =
+  "ViscousPotential builds developer tools, including GitSync, the open-source cross-platform mobile git client for Android and iOS, and Vocode, an extensible plugin platform currently in beta."
 
-  <meta charSet="utf-8" />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+const ORG_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ViscousPotential",
+  alternateName: "Viscous Potential",
+  url: "https://viscouspotenti.al/",
+  logo: "https://viscouspotenti.al/icon.png",
+  description: PAGE_DESCRIPTION,
+  sameAs: [
+    "https://www.youtube.com/@ViscousPotential",
+    "https://github.com/ViscousPot/",
+    "https://discord.gg/cgvjdDyzzB",
+    "https://www.patreon.com/c/ViscousPotential",
+    "https://www.reddit.com/user/ViscousPotential/submitted/",
+    "https://viscouspotenti.medium.com/",
+    "https://www.instagram.com/viscouspotential/",
+  ],
+  makesOffer: [
+    {
+      "@type": "SoftwareApplication",
+      name: "GitSync",
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "Android, iOS",
+      url: "https://gitsync.viscouspotenti.al/",
+      description:
+        "Cross-platform mobile git client that syncs a folder between a remote repository and a local directory on Android and iOS.",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "Vocode",
+      applicationCategory: "DeveloperApplication",
+      url: "https://vocode-docs.viscouspotenti.al/",
+      description:
+        "Extensible plugin platform with a growing community ecosystem. Currently in beta.",
+    },
+  ],
+}
 
-  <meta name="og:site_name" content="ViscousPotential"></meta>
-  <meta property="og:title" content="ViscousPotential" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="ViscousPotential" />
-  <meta name="twitter:description" content="" />
-  <meta property="og:description" content="" />
-  <meta property="og:image:alt" content="" />
+export const Head: HeadFC = () => (
+  <>
+    <title>ViscousPotential: GitSync, Vocode & open-source developer tools</title>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={PAGE_DESCRIPTION} />
+    <meta name="keywords" content="ViscousPotential, GitSync, Vocode, mobile git client, Android git, iOS git, open source developer tools" />
+    <meta name="author" content="ViscousPotential" />
+    <link rel="canonical" href="https://viscouspotenti.al/" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
 
-  {/* <meta property="og:image" content="/icon.png" />
-  <meta property="og:image:url" content="/icon.png" />
-  <meta name="twitter:image" content="/icon.png" />
-  <meta
-    property="og:image:type"
-    content="image/png"
-  /> */}
+    {/* Open Graph */}
+    <meta property="og:site_name" content="ViscousPotential" />
+    <meta property="og:title" content="ViscousPotential: GitSync, Vocode & open-source developer tools" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={PAGE_DESCRIPTION} />
+    <meta property="og:url" content="https://viscouspotenti.al/" />
+    <meta property="og:image" content="https://viscouspotenti.al/icon.png" />
+    <meta property="og:image:alt" content="ViscousPotential logo" />
 
-  <meta property="twitter:domain" content="viscouspotenti.al"></meta>
-  <meta property="og:url" content="viscouspotenti.al"></meta>
-  <meta property="twitter:url" content="viscouspotenti.al"></meta>
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ViscousPotential: GitSync, Vocode & open-source developer tools" />
+    <meta name="twitter:description" content={PAGE_DESCRIPTION} />
+    <meta name="twitter:image" content="https://viscouspotenti.al/icon.png" />
+    <meta property="twitter:domain" content="viscouspotenti.al" />
+    <meta property="twitter:url" content="https://viscouspotenti.al/" />
 
-  <link rel="icon" href="/icon.png" />
-  <meta name="description" content="" />
-  <meta name="generator" content="Quartz" />
-</>
+    <link rel="icon" href="/icon.png" />
+    <meta name="theme-color" content="#2E261F" />
+
+    <script
+      type="application/ld+json"
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSONLD) }}
+    />
+  </>
+)
