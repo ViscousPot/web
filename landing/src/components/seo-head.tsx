@@ -43,8 +43,10 @@ export function SeoHead({ title, description, path, children }: SeoHeadProps) {
       <meta name="author" content={SITE_NAME} />
       <link rel="canonical" href={url} />
       <link
-        rel="preconnect"
-        href="https://cdnjs.cloudflare.com"
+        rel="preload"
+        as="font"
+        type="font/woff2"
+        href="/static/atkinson-hyperlegible-next-latin-wght-normal-fbe029baee1041af132980453a3b63b3.woff2"
         crossOrigin="anonymous"
       />
 
