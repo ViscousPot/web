@@ -19,7 +19,9 @@ const SponsorPage: React.FC<PageProps> = () => {
             Sponsor ViscousPotential
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#D4BDA1] md:text-lg">
-            Every patron and sponsor pays for the hours that go into the work. If you've used GitSync and want it to keep getting better, or you're waiting on Vocode to ship, this is the part that funds it.
+            Every patron and sponsor pays for the hours that go into the work.
+            If you've used GitSync and want it to keep getting better, or you're
+            waiting on Vocode to ship, this is the part that funds it.
           </p>
         </header>
 
@@ -98,7 +100,8 @@ const SponsorPage: React.FC<PageProps> = () => {
             Thank you
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#EBDAC6]/90 md:text-lg">
-            Sponsoring is one way to back the work. Filing a sharp bug report or telling a friend about GitSync is another. Either way it lands.
+            Sponsoring is one way to back the work. Filing a sharp bug report or
+            telling a friend about GitSync is another. Thanks either way! :)
           </p>
         </section>
       </article>
