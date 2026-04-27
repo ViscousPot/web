@@ -188,7 +188,7 @@ const ORG_JSONLD = {
     "https://discord.gg/cgvjdDyzzB",
     "https://www.patreon.com/c/ViscousPotential",
     "https://www.reddit.com/user/ViscousPotential/submitted/",
-    "https://viscouspotenti.medium.com/",
+    "https://viscouspotential.medium.com/",
     "https://www.instagram.com/viscouspotential/",
   ],
   makesOffer: [
