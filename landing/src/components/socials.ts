@@ -7,15 +7,15 @@ import {
   faReddit,
   faYoutube,
   IconDefinition,
-} from "@fortawesome/free-brands-svg-icons"
+} from "@fortawesome/free-brands-svg-icons";
 
 export type Social = {
-  href: string
-  label: string
-  icon: IconDefinition
+  href: string;
+  label: string;
+  icon: IconDefinition;
   /** Tailwind classes for the hover/focus brand color */
-  hover: string
-}
+  hover: string;
+};
 
 export const SOCIALS: Social[] = [
   {
@@ -54,7 +54,7 @@ export const SOCIALS: Social[] = [
       "hover:bg-[#FF4500] hover:text-white focus-visible:bg-[#FF4500] focus-visible:text-white",
   },
   {
-    href: "https://viscouspotenti.medium.com/",
+    href: "https://viscouspotential.medium.com/",
     label: "Medium",
     icon: faMedium,
     hover:
@@ -67,4 +67,4 @@ export const SOCIALS: Social[] = [
     hover:
       "hover:bg-[#E4405F] hover:text-white focus-visible:bg-[#E4405F] focus-visible:text-white",
   },
-]
+];
