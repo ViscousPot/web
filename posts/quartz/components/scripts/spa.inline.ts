@@ -8,12 +8,18 @@ const NODE_TYPE_ELEMENT = 1
 let announcer = document.createElement("route-announcer")
 const isElement = (target: EventTarget | null): target is Element =>
   (target as Node)?.nodeType === NODE_TYPE_ELEMENT
-const isLocalUrl = (href: string) => {
+const getRouterBase = (): string => {
+  const slug = (document.body.dataset.slug ?? "").replace(/^\.\//, "").replace(/(^|\/)index$/, "")
+  const path = window.location.pathname.replace(/\/$/, "")
+  return slug && path.endsWith(slug) ? path.slice(0, path.length - slug.length) : `${path}/`
+}
+
+const isRoutableUrl = (href: string) => {
   try {
     const url = new URL(href)
-    if (window.location.origin === url.origin) {
-      return true
-    }
+    if (window.location.origin !== url.origin) return false
+    const base = getRouterBase()
+    return url.pathname.startsWith(base) || `${url.pathname}/` === base
   } catch (e) {}
   return false
 }
@@ -31,7 +37,7 @@ const getOpts = ({ target }: Event): { url: URL; scroll?: boolean } | undefined 
   if (!a) return
   if ("routerIgnore" in a.dataset) return
   const { href } = a
-  if (!isLocalUrl(href)) return
+  if (!isRoutableUrl(href)) return
   return { url: new URL(href), scroll: "routerNoscroll" in a.dataset ? false : undefined }
 }
 
