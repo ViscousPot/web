@@ -29,7 +29,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   left: [
-    Component.PageTitle(),
+    Component.Logo(),
+    Component.HeaderNav(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -83,7 +84,8 @@ export const defaultListPageLayout: PageLayout = {
     Component.ContentMeta()
   ],
   left: [
-    Component.PageTitle(),
+    Component.Logo(),
+    Component.HeaderNav(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [

@@ -737,7 +737,7 @@ body {
   line-height: var(--line-height-tight);
   font-size: var(--font-ui-medium);
   background-color: var(--background-primary);
-  background-size: 25px 25px;
+  background-size: 40px 40px;
   background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
   color: var(--text-normal);
   -webkit-tap-highlight-color: #ffffff;
@@ -1183,7 +1183,7 @@ body {
   background-color: var(--background-primary);
 
   background-color: var(--background-primary);
-  background-size: 25px 25px;
+  background-size: 40px 40px;
   background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
 
   overflow: initial;
@@ -1228,14 +1228,14 @@ body {
     background-color: var(--background-secondary);
 
     background-color: var(--background-primary);
-    background-size: 25px 25px;
+    background-size: 40px 40px;
     background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
 
     > #quartz-root {
       background-color: var(--background-primary);
 
       background-color: var(--background-primary);
-      background-size: 25px 25px;
+      background-size: 40px 40px;
       background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
     }
   }
@@ -1254,30 +1254,21 @@ body {
 
   section,
   .page > #quartz-body .sidebar {
+    // the sidebars sit over the page background at every width, so let the
+    // page's dot pattern show through instead of restarting the grid on each
+    // one (which double-paints and knocks the dots out of alignment)
     &.left,
     &.left:has(.explorer),
     &.right {
-      background-color: var(--background-primary);
-      background-size: 25px 25px;
-      background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
-    
-    }
-    @media all and not ($desktop) {
-      &.right {
-        background-color: var(--background-primary);
-        background-size: 25px 25px;
-        background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
-    
-      }
+      background-color: transparent;
+      background-image: none;
     }
     @media all and ($mobile) {
       &.left:has(.explorer) {
         :not(.folder-container, a[data-for]):before,
         :after {
-          background-color: var(--background-primary);
-          background-size: 25px 25px;
-          background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
-    
+          background-color: transparent;
+          background-image: none;
 
           content: " ";
           display: block;
@@ -1911,7 +1902,7 @@ body {
     .explorer-content {
       @media all and ($mobile) {
         background-color: var(--background-primary);
-        background-size: 25px 25px;
+        background-size: 40px 40px;
         background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
     
 
@@ -2205,7 +2196,7 @@ body {
         border-color: var(--background-modifier-border, var(--color-base-35));
 
         background-color: var(--background-primary);
-        background-size: 25px 25px;
+        background-size: 40px 40px;
         background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
     
 
@@ -2222,7 +2213,7 @@ body {
           width: 100%;
           padding-inline-end: var(--size-4-12);
           background-color: var(--background-primary);
-          background-size: 25px 25px;
+          background-size: 40px 40px;
           background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
     
           font-size: var(--font-ui-medium);
@@ -2330,7 +2321,7 @@ body {
         border: 1px solid
           var(--background-modifier-border-hover, var(--color-base-35));
         background-color: var(--background-primary);
-        background-size: 25px 25px;
+        background-size: 40px 40px;
         background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
       }
     }
@@ -2359,7 +2350,7 @@ body {
     border: unset;
 
     background-color: var(--background-primary);
-    background-size: 25px 25px;
+    background-size: 40px 40px;
     background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
     
     border: 1px solid var(--background-modifier-border);
@@ -2378,7 +2369,7 @@ body {
       border: 1px solid var(--background-modifier-border);
 
       background-color: var(--background-primary);
-      background-size: 25px 25px;
+      background-size: 40px 40px;
       background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
 
       border-radius: var(--radius-m);
@@ -2402,8 +2393,12 @@ body {
       }
     }
     @media all and ($mobile) {
+      // line the logo up with the landing page header on mobile: 1.5rem from
+      // the viewport edge (1rem of that comes from #quartz-body) and 1.25rem
+      // from the top, matching its px-6 py-5
       .sidebar.left {
-        padding-left: 1rem;
+        padding-left: 0.5rem;
+        padding-top: 0.25rem;
       }
       .explorer:not(.collapsed) > .explorer-content {
         padding-left: 1rem;

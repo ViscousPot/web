@@ -16,38 +16,51 @@ const AboutPage: React.FC<PageProps> = () => {
             About ViscousPotential
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#D4BDA1] md:text-lg">
-            About the dev behind ViscousPotential.
+            Hi, I'm the developer behind ViscousPotential.
           </p>
         </header>
 
         {/* The story */}
-        <section className="mt-16 md:mt-20">
-          <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-[#D4BDA1]">
-            The story
-          </h2>
-          <div className="mt-5 space-y-5 text-base leading-relaxed text-[#EBDAC6]/90 md:text-lg">
+        <section className="mt-14 md:mt-16">
+          <div className="space-y-5 text-center text-base leading-relaxed text-[#EBDAC6]/90 md:text-lg">
             <p>
-              ViscousPotential is one independent developer working in the open.
-              The name started as a label for personal projects that grew up
-              enough to need a home, and it's been the home for them ever since.
-              One person, shipping things and watching what people do with them.
+              ViscousPotential exists because of{" "}
+              <strong className="text-[#EBDAC6]">GitSync</strong>. I made the
+              name to have somewhere to put that project, and everything I've
+              built since has lived under it. There's no team here, so when you
+              open an issue or send a message, I'm the one reading it.
             </p>
             <p>
-              The first project that really took off was{" "}
-              <strong className="text-[#EBDAC6]">GitSync</strong>. It started as
-              a personal itch. I wanted to keep a folder synced between a git
-              remote and a phone with the same one-tap reliability you'd expect
-              from any decent desktop client. Most of the existing options had
-              been abandoned, or treated the phone like a second-class device.
-              So I built one. The motivating idea has been the same ever since:
-              developer tools that take phones seriously.
+              GitSync came from two frustrations at once. I wanted my Obsidian
+              vault to sync to my phone automatically and for free, and I wanted
+              a git client on Android that was actually decent to use. Nothing
+              out there did either well, so I wrote my own. Bringing it to iOS
+              meant rebuilding the entire app from scratch as a cross-platform
+              one, which was an ordeal, but both versions now come from the same
+              codebase.
             </p>
             <p>
-              Everything here gets built as if it has to last. The code lives on
-              GitHub and the issues stay public, because the work belongs to the
-              people using it. There are no investors or growth targets to
-              answer to, so the work can take its time. Five years from now, the
-              projects should still work.
+              <strong className="text-[#EBDAC6]">Vocode</strong> actually
+              started around the same time as GitSync. I sat on it for about two
+              years before making it public: a recorder that transcribes on the
+              device, so nothing gets shipped off to someone else's server.{" "}
+              <strong className="text-[#EBDAC6]">WriteAway</strong> came from
+              wanting my handwritten notes to be searchable in Obsidian.{" "}
+              <strong className="text-[#EBDAC6]">B.I.T.S.</strong> is the Corne
+              split keyboard I built to use forever: mostly 3D printed, with a
+              powered dongle dock built into the shell.
+            </p>
+            <p>
+              I build these things as if I'll still be using them in five years,
+              because I usually am. The code is on GitHub and the issues stay
+              public. If something breaks in a way that matters, I'd rather hear
+              about it than not.
+            </p>
+            <p>
+              There are no investors, no growth targets, and no process to sit
+              through, which means I can move on a fix the same day I hear about
+              it. It also means I can take the time to get something right, and
+              say no to the features that would quietly make it worse.
             </p>
           </div>
         </section>

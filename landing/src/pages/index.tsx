@@ -2,6 +2,7 @@ import * as React from "react";
 import type { HeadFC, PageProps } from "gatsby";
 import GitSync from "../images/gitsync.svg";
 import Vocode from "../images/vocode.svg";
+import BoardInTheShell from "../images/boardintheshell.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowUpRightFromSquare,
@@ -145,14 +146,20 @@ const IndexPage: React.FC<PageProps> = () => {
               </div>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <span
-                  aria-disabled="true"
-                  className="inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-[#26211C] px-5 py-2.5 text-sm font-bold text-[#D4BDA1]/70 ring-1 ring-[#ebdac633] md:text-base"
+                <a
+                  href="https://vocode.viscouspotenti.al"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#EBDAC6] px-5 py-2.5 text-sm font-bold text-[#2E261F] transition-all hover:bg-white hover:scale-[1.03] md:text-base"
                 >
                   In Beta
-                </span>
+                  <FontAwesomeIcon
+                    icon={faArrowUpRightFromSquare}
+                    className="text-xs"
+                  />
+                </a>
                 <a
-                  href="https://vocode-docs.viscouspotenti.al/"
+                  href="https://vocode.viscouspotenti.al/wiki/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-[#ebdac659] px-5 py-2.5 text-sm font-bold text-[#EBDAC6] transition-all hover:border-[#EBDAC6] hover:bg-[#26211C] md:text-base"
@@ -160,6 +167,118 @@ const IndexPage: React.FC<PageProps> = () => {
                   <FontAwesomeIcon icon={faBookBookmark} />
                   Docs
                 </a>
+              </div>
+            </div>
+          </BlurryBlob>
+        </article>
+
+        {/* WriteAway */}
+        <article className="relative min-h-[26rem] md:min-h-[32rem]">
+          <BlurryBlob
+            firstBlobColor="bg-[#8b4ddb]"
+            secondBlobColor="bg-[#5c2f94]"
+          >
+            <div className="absolute inset-0 z-20 flex flex-col rounded-3xl border-2 border-[#ebdac659] bg-[#2E261F]/30 p-6 backdrop-blur-[2px] transition-colors duration-300 md:p-8 md:hover:border-[#EBDAC6] md:hover:bg-[#2E261F]/55">
+              <div className="flex items-center gap-4">
+                <img
+                  src="/writeaway.png"
+                  alt="WriteAway"
+                  className="h-16 w-16 shrink-0 md:h-20 md:w-20"
+                />
+                <div className="min-w-0">
+                  <h2 className="text-3xl font-extrabold leading-none md:text-4xl">
+                    WriteAway
+                  </h2>
+                  <p className="mt-1 text-sm font-medium text-[#D4BDA1] md:text-base">
+                    Handwriting recognition for Obsidian
+                  </p>
+                </div>
+              </div>
+
+              <p className="mt-5 flex-1 text-sm leading-relaxed text-[#EBDAC6]/90 md:text-base">
+                An Obsidian plugin that turns handwritten notes into real,
+                searchable text. Built from scratch end to end: the datasets,
+                the recognition model, and the plugin itself.
+              </p>
+
+              <div className="mt-5 flex flex-wrap items-center gap-2 text-xs font-semibold text-[#D4BDA1] md:text-sm">
+                <span className="rounded-full border border-[#ebdac633] px-3 py-1">
+                  Obsidian
+                </span>
+                <span className="rounded-full border border-[#ebdac633] px-3 py-1">
+                  Handwriting
+                </span>
+                <span className="rounded-full border border-[#8b4ddb66] bg-[#8b4ddb14] px-3 py-1 text-[#a97ae8]">
+                  Built from scratch
+                </span>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="https://writeaway.viscouspotenti.al/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#EBDAC6] px-5 py-2.5 text-sm font-bold text-[#2E261F] transition-all hover:bg-white hover:scale-[1.03] md:text-base"
+                >
+                  View samples
+                  <FontAwesomeIcon
+                    icon={faArrowUpRightFromSquare}
+                    className="text-xs"
+                  />
+                </a>
+              </div>
+            </div>
+          </BlurryBlob>
+        </article>
+
+        {/* B.I.T.S. */}
+        <article className="relative min-h-[26rem] md:min-h-[32rem]">
+          <BlurryBlob
+            firstBlobColor="bg-[#e8447f]"
+            secondBlobColor="bg-[#972c53]"
+          >
+            <div className="absolute inset-0 z-20 flex flex-col rounded-3xl border-2 border-[#ebdac659] bg-[#2E261F]/30 p-6 backdrop-blur-[2px] transition-colors duration-300 md:p-8 md:hover:border-[#EBDAC6] md:hover:bg-[#2E261F]/55">
+              <div className="flex items-center gap-4">
+                <BoardInTheShell className="h-16 w-16 shrink-0 md:h-20 md:w-20" />
+                <div className="min-w-0">
+                  <h2 className="text-3xl font-extrabold leading-none md:text-4xl">
+                    B.I.T.S.
+                  </h2>
+                  <p className="mt-1 text-sm font-medium text-[#D4BDA1] md:text-base">
+                    Corne split keyboard in a 3D printed shell
+                  </p>
+                </div>
+              </div>
+
+              <p className="mt-5 flex-1 text-sm leading-relaxed text-[#EBDAC6]/90 md:text-base">
+                A wireless split Corne build housed in a 3D printed shell with a
+                powered dongle dock and room for a large battery. The dongle is
+                3D printed too, and it can be duplicated so you can keep one per
+                machine. Everything is open source: shells, dongle, firmware.
+              </p>
+
+              <div className="mt-5 flex flex-wrap items-center gap-2 text-xs font-semibold text-[#D4BDA1] md:text-sm">
+                <span className="rounded-full border border-[#ebdac633] px-3 py-1">
+                  Corne
+                </span>
+                <span className="rounded-full border border-[#ebdac633] px-3 py-1">
+                  3D printed
+                </span>
+                <span className="rounded-full border border-[#ebdac633] px-3 py-1">
+                  Wireless dongle
+                </span>
+                <span className="rounded-full border border-[#e8447f66] bg-[#e8447f14] px-3 py-1 text-[#e8447f]">
+                  Open Source
+                </span>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <span
+                  aria-disabled="true"
+                  className="inline-flex cursor-not-allowed select-none items-center gap-2 rounded-full border border-[#ebdac633] bg-[#EBDAC6]/10 px-5 py-2.5 text-sm font-bold text-[#D4BDA1]/70 md:text-base"
+                >
+                  Coming soon
+                </span>
               </div>
             </div>
           </BlurryBlob>
@@ -205,9 +324,24 @@ const ORG_JSONLD = {
       "@type": "SoftwareApplication",
       name: "Vocode",
       applicationCategory: "DeveloperApplication",
-      url: "https://vocode-docs.viscouspotenti.al/",
+      url: "https://vocode.viscouspotenti.al/",
       description:
         "Private offline voice recording and transcription app for capturing notes on your phone. Currently in beta.",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "WriteAway",
+      applicationCategory: "UtilitiesApplication",
+      url: "https://writeaway.viscouspotenti.al/",
+      description:
+        "Obsidian plugin that converts handwritten notes into searchable text using a purpose-built handwriting recognition model. Currently in prototype.",
+    },
+    {
+      "@type": "Product",
+      name: "B.I.T.S.",
+      url: "https://boardintheshell.viscouspotenti.al/",
+      description:
+        "Open-source wireless Corne split keyboard in a 3D printed shell with a powered dongle dock, large battery space, and a duplicable 3D printed dongle.",
     },
   ],
 };

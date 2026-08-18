@@ -50,6 +50,6 @@
 
 main {
   --editor-bgpattern-color: hsla(31, 27%, 25%, 1);
-  background-size: 50px 50px;
+  background-size: 40px 40px;
   background-image: radial-gradient(circle, var(--editor-bgpattern-color) 1px, rgba(0,0,0,0) 1px);
 }
