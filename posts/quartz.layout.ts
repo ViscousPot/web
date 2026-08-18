@@ -30,7 +30,6 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     Component.Logo(),
-    Component.HeaderNav(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
@@ -85,7 +84,6 @@ export const defaultListPageLayout: PageLayout = {
   ],
   left: [
     Component.Logo(),
-    Component.HeaderNav(),
     Component.MobileOnly(Component.Spacer()),
     Component.Flex({
       components: [
