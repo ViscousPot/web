@@ -273,12 +273,18 @@ const IndexPage: React.FC<PageProps> = () => {
               </div>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <span
-                  aria-disabled="true"
-                  className="inline-flex cursor-not-allowed select-none items-center gap-2 rounded-full border border-[#ebdac633] bg-[#EBDAC6]/10 px-5 py-2.5 text-sm font-bold text-[#D4BDA1]/70 md:text-base"
+                <a
+                  href="https://bits.viscouspotenti.al/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#EBDAC6] px-5 py-2.5 text-sm font-bold text-[#2E261F] transition-all hover:bg-white hover:scale-[1.03] md:text-base"
                 >
-                  Coming soon
-                </span>
+                  View project
+                  <FontAwesomeIcon
+                    icon={faArrowUpRightFromSquare}
+                    className="text-xs"
+                  />
+                </a>
               </div>
             </div>
           </BlurryBlob>
@@ -339,7 +345,7 @@ const ORG_JSONLD = {
     {
       "@type": "Product",
       name: "B.I.T.S.",
-      url: "https://boardintheshell.viscouspotenti.al/",
+      url: "https://bits.viscouspotenti.al/",
       description:
         "Open-source wireless Corne split keyboard in a 3D printed shell with a powered dongle dock, large battery space, and a duplicable 3D printed dongle.",
     },
