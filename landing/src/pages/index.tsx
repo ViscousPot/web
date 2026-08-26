@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowUpRightFromSquare,
   faBookBookmark,
+  faTrophy,
 } from "@fortawesome/free-solid-svg-icons";
 import BlurryBlob from "../components/animata/blurry-blob";
 import { PageLayout } from "../components/page-layout";
@@ -66,8 +67,9 @@ const IndexPage: React.FC<PageProps> = () => {
                 <span className="rounded-full border border-[#ebdac633] px-3 py-1">
                   Open Source
                 </span>
-                <span className="rounded-full border border-[#FFCB6B66] bg-[#FFCB6B14] px-3 py-1 text-[#FFCB6B]">
-                  ★ 2024 Obsidian Gem
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-[#FFCB6B66] bg-[#FFCB6B14] px-3 py-1 text-[#FFCB6B]">
+                  <FontAwesomeIcon icon={faTrophy} className="text-xs" />
+                  2024 Obsidian Gem
                 </span>
               </div>
 
@@ -92,6 +94,65 @@ const IndexPage: React.FC<PageProps> = () => {
                 >
                   <FontAwesomeIcon icon={faBookBookmark} />
                   Wiki
+                </a>
+              </div>
+            </div>
+          </BlurryBlob>
+        </article>
+
+        {/* WriteAway */}
+        <article className="relative min-h-[26rem] md:min-h-[32rem]">
+          <BlurryBlob
+            firstBlobColor="bg-[#8b4ddb]"
+            secondBlobColor="bg-[#5c2f94]"
+          >
+            <div className="absolute inset-0 z-20 flex flex-col rounded-3xl border-2 border-[#ebdac659] bg-[#2E261F]/30 p-6 backdrop-blur-[2px] transition-colors duration-300 md:p-8 md:hover:border-[#EBDAC6] md:hover:bg-[#2E261F]/55">
+              <div className="flex items-center gap-4">
+                <img
+                  src="/writeaway.png"
+                  alt="WriteAway"
+                  className="h-16 w-16 shrink-0 md:h-20 md:w-20"
+                />
+                <div className="min-w-0">
+                  <h2 className="text-3xl font-extrabold leading-none md:text-4xl">
+                    WriteAway
+                  </h2>
+                  <p className="mt-1 text-sm font-medium text-[#D4BDA1] md:text-base">
+                    Handwriting recognition for Obsidian
+                  </p>
+                </div>
+              </div>
+
+              <p className="mt-5 flex-1 text-sm leading-relaxed text-[#EBDAC6]/90 md:text-base">
+                An Obsidian plugin that turns handwritten notes into real,
+                searchable text. Built from scratch end to end: the datasets,
+                the recognition model, and the plugin itself.
+              </p>
+
+              <div className="mt-5 flex flex-wrap items-center gap-2 text-xs font-semibold text-[#D4BDA1] md:text-sm">
+                <span className="rounded-full border border-[#ebdac633] px-3 py-1">
+                  Obsidian
+                </span>
+                <span className="rounded-full border border-[#ebdac633] px-3 py-1">
+                  Handwriting
+                </span>
+                <span className="rounded-full border border-[#8b4ddb66] bg-[#8b4ddb14] px-3 py-1 text-[#a97ae8]">
+                  Built from scratch
+                </span>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="https://writeaway.viscouspotenti.al/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#EBDAC6] px-5 py-2.5 text-sm font-bold text-[#2E261F] transition-all hover:bg-white hover:scale-[1.03] md:text-base"
+                >
+                  View samples
+                  <FontAwesomeIcon
+                    icon={faArrowUpRightFromSquare}
+                    className="text-xs"
+                  />
                 </a>
               </div>
             </div>
@@ -166,65 +227,6 @@ const IndexPage: React.FC<PageProps> = () => {
                 >
                   <FontAwesomeIcon icon={faBookBookmark} />
                   Docs
-                </a>
-              </div>
-            </div>
-          </BlurryBlob>
-        </article>
-
-        {/* WriteAway */}
-        <article className="relative min-h-[26rem] md:min-h-[32rem]">
-          <BlurryBlob
-            firstBlobColor="bg-[#8b4ddb]"
-            secondBlobColor="bg-[#5c2f94]"
-          >
-            <div className="absolute inset-0 z-20 flex flex-col rounded-3xl border-2 border-[#ebdac659] bg-[#2E261F]/30 p-6 backdrop-blur-[2px] transition-colors duration-300 md:p-8 md:hover:border-[#EBDAC6] md:hover:bg-[#2E261F]/55">
-              <div className="flex items-center gap-4">
-                <img
-                  src="/writeaway.png"
-                  alt="WriteAway"
-                  className="h-16 w-16 shrink-0 md:h-20 md:w-20"
-                />
-                <div className="min-w-0">
-                  <h2 className="text-3xl font-extrabold leading-none md:text-4xl">
-                    WriteAway
-                  </h2>
-                  <p className="mt-1 text-sm font-medium text-[#D4BDA1] md:text-base">
-                    Handwriting recognition for Obsidian
-                  </p>
-                </div>
-              </div>
-
-              <p className="mt-5 flex-1 text-sm leading-relaxed text-[#EBDAC6]/90 md:text-base">
-                An Obsidian plugin that turns handwritten notes into real,
-                searchable text. Built from scratch end to end: the datasets,
-                the recognition model, and the plugin itself.
-              </p>
-
-              <div className="mt-5 flex flex-wrap items-center gap-2 text-xs font-semibold text-[#D4BDA1] md:text-sm">
-                <span className="rounded-full border border-[#ebdac633] px-3 py-1">
-                  Obsidian
-                </span>
-                <span className="rounded-full border border-[#ebdac633] px-3 py-1">
-                  Handwriting
-                </span>
-                <span className="rounded-full border border-[#8b4ddb66] bg-[#8b4ddb14] px-3 py-1 text-[#a97ae8]">
-                  Built from scratch
-                </span>
-              </div>
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a
-                  href="https://writeaway.viscouspotenti.al/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#EBDAC6] px-5 py-2.5 text-sm font-bold text-[#2E261F] transition-all hover:bg-white hover:scale-[1.03] md:text-base"
-                >
-                  View samples
-                  <FontAwesomeIcon
-                    icon={faArrowUpRightFromSquare}
-                    className="text-xs"
-                  />
                 </a>
               </div>
             </div>
